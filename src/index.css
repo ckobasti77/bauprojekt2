@@ -39,7 +39,7 @@ body {
 }
 
 .App {
-  background: url("./assets/bg2.avif") center no-repeat;
+  background: url("./assets/bg4.jpg") center no-repeat;
   /* background: linear-gradient(to bottom right, hsl(173, 80%, 55%), hsl(173, 20%, 80%)); */
   background-size: cover;
   box-shadow: inset 0 0 0 2000px rgba(0, 0, 0, .4);
