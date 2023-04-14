@@ -192,10 +192,9 @@ input[type=number]::-webkit-outer-spin-button {
 
 .plus {
   animation: shine 2s infinite linear;
-  transition: transform .25s ease-in-out;
 }
 
-.iks {
+/* .iks {
   transition: transform .25s ease-in-out;
   transform: rotate(45deg);
 }
@@ -203,11 +202,10 @@ input[type=number]::-webkit-outer-spin-button {
 .iks:hover {
   color: #ee3b47 !important;
   transform: scale(1.2) rotate(45deg);
-}
+} */
 
 .plus:hover {
   color: #2EA295 !important;
-  transform: scale(1.2);
 }
 
 @keyframes shine {

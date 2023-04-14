@@ -26,7 +26,7 @@ const CadastralMunicipality = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
-          /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
+          /^([А-ЩЪЬЈЉЊЋЂЏШ][а-щъьюљњћђџш]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
             ? setError("")
             : language === "cir"
             ? setError("Унесите валидну општину.")

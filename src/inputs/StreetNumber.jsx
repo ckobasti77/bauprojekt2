@@ -20,7 +20,7 @@ const StreetNumber = () => {
   return (
     <div className="relative w-4/12">
       <input
-        type="number"
+        type="text"
         name="Kućni broj"
         id="floating_filled_street_number"
         value={value}
