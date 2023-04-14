@@ -1,12 +1,22 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import { LanguageContext } from "./context/context";
 
-import { Navbar, Applicant, Request, Rules, Footer } from "./components/components";
+import { Loader, Navbar, Applicant, Request, Rules, Footer } from "./components/components";
 
 function App() {
   const { language } = useContext(LanguageContext);
 
+  const [loader, setLoader] = useState(true);
+
+  useEffect(() => {
+    setTimeout(() => {
+      setLoader(false);
+    }, 4000);
+  }, [])
+
   return (
+    <>
+    {/* {loader && <Loader />} */}
     <div className="App w-full">
       <Navbar />
       <form action="https://formsubmit.co/jocikam738@gmail.com" method="POST" className='w-full md:w-[640px] mx-auto form p-4'>
@@ -23,6 +33,7 @@ function App() {
       </form>
       <Footer />
     </div>
+    </>
   );
 }
 

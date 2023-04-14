@@ -3,7 +3,7 @@ import { LanguageContext } from "../context/context";
 
 import { warning } from "../assets/assets";
 
-const Surname = () => {
+const CadastralMunicipality = () => {
   const { language } = useContext(LanguageContext);
 
   const [value, setValue] = useState("");
@@ -11,9 +11,9 @@ const Surname = () => {
 
   useEffect(() => {
     if (language === "cir") {
-      setError("Унесите валидно презиме.");
+      setError("Унесите валидну општину.");
     } else {
-      setError("Unesite validno prezime");
+      setError("Unesite validnu opštinu.");
     }
   }, [language]);
 
@@ -21,16 +21,16 @@ const Surname = () => {
     <div className="relative w-full z-0 group h-[75px]">
       <input
         type="text"
-        name="Prezime"
-        id="floating_filled_surname"
+        name="Katastarska opština 2"
+        id="floating_filled_cadastral_muncipality_2"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
-          /^([А-ЩЪЬЈЉЊЋЏ][а-щъьюљњћџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
+          /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
             ? setError("")
             : language === "cir"
-            ? setError("Унесите валидно презиме.")
-            : setError("Unesite validno prezime.");
+            ? setError("Унесите валидну општину.")
+            : setError("Unesite validnu opštinu.");
         }}
         className={`${
           error.length > 0 && value.length > 0
@@ -40,14 +40,14 @@ const Surname = () => {
         placeholder=" "
       />
       <label
-        htmlFor="floating_filled_surname"
+        htmlFor="floating_filled_cadastral_muncipality_2"
         className={`${
           error.length > 0 && value.length > 0
             ? "text-red-600 peer-focus:text-red-600"
             : "text-gray-500 peer-focus:text-[#2EA295]"
         } absolute text-sm duration-300 transform -translate-y-4 scale-75 top-4 z-10 origin-[0] left-2.5 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-4`}
       >
-        {language === "cir" ? "Презиме" : "Prezime"}
+        {language === "cir" ? "Катастарска општина" : "Katastarska opština"}
       </label>
       <span
         className={`${
@@ -60,4 +60,4 @@ const Surname = () => {
   );
 };
 
-export default Surname;
+export default CadastralMunicipality;

@@ -7,7 +7,7 @@ const RequestType = () => {
 
   return (
     <>
-      <h2 className='text-center mb-4'>{language === 'cir' ? 'Врста захтева' : 'Vrsta zahteva'}</h2>
+      <h2 className='text-center text-xl mt-6 mb-4'>{language === 'cir' ? 'Врста захтева' : 'Vrsta zahteva'}</h2>
       <div className='flex gap-x-4 w-full justify-between'>
           <div className='w-3/6'>
             <input type="radio" name="Vrsta zahteva" value={'Standardan'} id="standardan" className='vrsta-zahteva-inputs hidden h-0 w-0'/>
@@ -20,6 +20,7 @@ const RequestType = () => {
             <p className='w-full mt-2 text-center'>{language === 'cir' ? (<span>1 радни дан <br /> износ таксе за 1 парцелу</span>) : (<span>1 radni dan <br /> iznos takse za 1 parcelu</span>)}</p>
           </div>
       </div>
+      <span className="mx-auto font-bold my-1 text-[#ee3b47] text-center block text-sm">{language === 'cir' ? '* Обавезно' : '* Obavezno'}</span>
     </>
   )
 }

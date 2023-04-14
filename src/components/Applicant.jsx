@@ -8,10 +8,10 @@ const Applicant = () => {
 
   return (
     <div className='w-full'>
-        <h1 className='text-center mt-2 mb-5 text-2xl'>{language === 'cir' ? 'Подносилац захтева' : 'Podnosilac zahteva'}</h1>
+        <h1 className='text-center mt-2 mb-5 text-4xl'>{language === 'cir' ? 'Подносилац захтева' : 'Podnosilac zahteva'}</h1>
         <Name />
         <Surname />
-        <div className="flex gap-x-4 w-full my-4">
+        <div className="flex gap-x-4 w-full min-h-[75px]">
           <Street />
           <StreetNumber />
         </div>
