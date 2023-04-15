@@ -16,7 +16,7 @@ function App() {
 
   return (
     <>
-    {/* {loader && <Loader />} */}
+    {loader && <Loader />}
     <div className="App w-full">
       <Navbar />
       <form action="https://formsubmit.co/jocikam738@gmail.com" method="POST" className='w-full md:w-[640px] mx-auto form p-4'>
