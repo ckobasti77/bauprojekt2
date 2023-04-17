@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { LanguageContext, LocationContext } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Location = () => {
   const { language } = useContext(LanguageContext);
+  const { location, setLocation } = useContext(LocationContext);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +26,7 @@ const Location = () => {
         id="floating_filled_location"
         value={value}
         onChange={(e) => {
+          setLocation(e.target.value);
           setValue(e.target.value);
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}|[A-ZČĆŠĐŽ][a-zčćšđž]{0,28})( [А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}| [A-ZČĆŠĐŽ][a-zčćšđž]{0,28}){0,3}$/.test(e.target.value)
             ? setError("")
@@ -38,6 +40,7 @@ const Location = () => {
             : " border-gray-300 focus:border-[#2EA295]"
         } block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2  appearance-none focus:outline-none focus:ring-0 focus:border-[#2EA295] peer`}
         placeholder=" "
+        required
       />
       <label
         htmlFor="floating_filled_location"

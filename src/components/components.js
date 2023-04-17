@@ -8,6 +8,7 @@ import Parcel from "./Parcel";
 import Parcel2 from "./Parcel2";
 import Parcel3 from "./Parcel3";
 import Parcels from "./Parcels";
+import Uplatnica from "./Uplatnica";
 
 
 export {
@@ -21,5 +22,6 @@ export {
     Parcel2,
     Parcel3,
     Parcels,
-
+    Uplatnica,
+    
 }

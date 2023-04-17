@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { LanguageContext, StreetNumberContext } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const StreetNumber = () => {
   const { language } = useContext(LanguageContext);
+  const { streetNumber, setStreetNumber } = useContext(StreetNumberContext);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +26,7 @@ const StreetNumber = () => {
         id="floating_filled_street_number"
         value={value}
         onChange={(e) => {
+          setStreetNumber(e.target.value);
           setValue(e.target.value);
           /^(\d+[А-ЩЪЬЈЉЊЋЏа-шљњћџA-Za-z]?|\d+[а-шА-ЩЪЬЈЉЊЋЏ]\d{0,3}|bb|BB|бб|ББ)$/.test(e.target.value)
             ? setError("")
@@ -38,6 +40,7 @@ const StreetNumber = () => {
             : " border-gray-300 focus:border-[#2EA295]"
         } block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2  appearance-none focus:outline-none focus:ring-0 focus:border-[#2EA295] peer`}
         placeholder=" "
+        required
       />
       <label
         htmlFor="floating_filled_street_number"

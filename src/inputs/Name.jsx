@@ -1,10 +1,11 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { LanguageContext, NameContext } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Name = () => {
   const { language } = useContext(LanguageContext);
+  const { name, setName } = useContext(NameContext);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -25,6 +26,7 @@ const Name = () => {
         id="floating_filled_name"
         value={value}
         onChange={(e) => {
+          setName(e.target.value);
           setValue(e.target.value);
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
             ? setError("")
@@ -38,6 +40,7 @@ const Name = () => {
             : " border-gray-300 focus:border-[#2EA295]"
         } block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2  appearance-none focus:outline-none focus:ring-0 focus:border-[#2EA295] peer`}
         placeholder=" "
+        required
       />
       <label
         htmlFor="floating_filled_name"
