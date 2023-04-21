@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import {
   ParcelNumber,
@@ -8,7 +8,7 @@ import {
 } from "../inputs/inputs";
 
 const Parcel = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(ContextAll);
 
   return (
     <>

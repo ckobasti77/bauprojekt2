@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { RequestType, LocationInfo } from "../inputs/inputs";
 import { Parcels } from "./components";
 
 const Request = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(ContextAll);
 
   return (
     <div className="w-full">

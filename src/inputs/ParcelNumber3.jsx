@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
-const ParcelNumber = () => {
-  const { language } = useContext(LanguageContext);
+const ParcelNumber3 = () => {
+  const { language, setParcelNumber3} = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -19,6 +19,10 @@ const ParcelNumber = () => {
     } 
   }, [language, value]);
 
+  useEffect(() => {
+    setValue('');
+  }, [language]);
+  
   return (
     <div className="relative w-3/6 z-0 group">
       <input
@@ -28,6 +32,7 @@ const ParcelNumber = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setParcelNumber3(e.target.value);
         }}
         className={`${
           error.length > 0 && value.length > 0
@@ -58,4 +63,4 @@ const ParcelNumber = () => {
   );
 };
 
-export default ParcelNumber;
+export default ParcelNumber3;

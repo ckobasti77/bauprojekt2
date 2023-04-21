@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext, SurnameContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Surname = () => {
-  const { language } = useContext(LanguageContext);
-  const { surname, setSurname } = useContext(SurnameContext);
+  const { language, setSurname } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,6 +15,7 @@ const Surname = () => {
     } else {
       setError("Unesite validno prezime");
     }
+    setValue('');
   }, [language]);
 
   return (

@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Rules = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(ContextAll);
 
   return (
     <div className='mt-24'>

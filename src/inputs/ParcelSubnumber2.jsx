@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
-const ParcelSubnumber = () => {
-  const { language } = useContext(LanguageContext);
+const ParcelSubnumber2 = () => {
+  const { language, setParcelSubnumber2 } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -19,15 +19,20 @@ const ParcelSubnumber = () => {
     } 
   }, [language, value]);
 
+  useEffect(() => {
+    setValue('');
+  }, [language]);
+
   return (
     <div className="relative w-3/6 z-0 group">
       <input
-        type="text"
+        type="number"
         name="Podbroj parcele 2"
         id="floating_filled_parcel_subnumber_2"
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setParcelSubnumber2(e.target.value);
         }}
         className={`${
           error.length > 0 && value.length > 0
@@ -57,4 +62,4 @@ const ParcelSubnumber = () => {
   );
 };
 
-export default ParcelSubnumber;
+export default ParcelSubnumber2;

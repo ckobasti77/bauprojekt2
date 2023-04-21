@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext, StreetNumberContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const StreetNumber = () => {
-  const { language } = useContext(LanguageContext);
-  const { streetNumber, setStreetNumber } = useContext(StreetNumberContext);
+  const { language, setStreetNumber } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,6 +15,7 @@ const StreetNumber = () => {
     } else {
       setError("Unesite validan kućni broj.");
     }
+    setValue('');
   }, [language]);
 
   return (

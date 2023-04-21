@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const PhoneNumber = () => {
-  const { language } = useContext(LanguageContext);
+  const { language, setPhoneNumber } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +15,7 @@ const PhoneNumber = () => {
     } else {
       setError("Unesite validan broj telefona.");
     }
+    setValue('');
   }, [language]);
 
   return (
@@ -26,6 +27,7 @@ const PhoneNumber = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setPhoneNumber(e.target.value);
           /^(?:\+381|0)[\d\/\- ]{8,}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

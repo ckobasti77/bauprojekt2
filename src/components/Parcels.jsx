@@ -1,10 +1,10 @@
 import React, { useState, useContext } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { Parcel, Parcel2, Parcel3 } from "./components";
 
 const Parcels = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(ContextAll);
 
   const [number2, setNumber2] = useState(false);
   const [number3, setNumber3] = useState(false);

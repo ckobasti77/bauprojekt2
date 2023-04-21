@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const ParcelNumber = () => {
-  const { language } = useContext(LanguageContext);
+  const { language, setParcelNumber } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,8 +16,12 @@ const ParcelNumber = () => {
       } else {
         setError("Maksimum 5 karaktera.");
       }
-    } 
+    }
   }, [language, value]);
+
+  useEffect(() => {
+    setValue('');
+  }, [language]);
 
   return (
     <div className="relative w-3/6 z-0 group">
@@ -28,6 +32,7 @@ const ParcelNumber = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setParcelNumber(e.target.value);
         }}
         className={`${
           error.length > 0 && value.length > 0

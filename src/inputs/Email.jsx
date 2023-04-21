@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Email = () => {
-  const { language } = useContext(LanguageContext);
+  const { language, setEmail } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +15,7 @@ const Email = () => {
     } else {
       setError("Unesite validan e-mail.");
     }
+    setValue('');
   }, [language]);
 
 
@@ -27,6 +28,7 @@ const Email = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setEmail(e.target.value);
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
-const Navbar = () => {
-  const { language, setLanguage } = useContext(LanguageContext);
+const Navbar = ({ setShowTable, setShowAdmin }) => {
+  const { language, setLanguage } = useContext(ContextAll);
 
   return (
     <div className="navbar w-full flex justify-between px-0 py-3 lg:px-10">
@@ -35,6 +35,7 @@ const Navbar = () => {
           {language === "cir" ? "Латиница" : "Latinica"}
         </label>
       </div>
+      <span className="rounded-lg bg-slate-600 px-6 py-1 cursor-pointer" onClick={() => setShowAdmin(true)}>Admin</span>
     </div>
   );
 };

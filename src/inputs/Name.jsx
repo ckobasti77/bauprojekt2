@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext, NameContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Name = () => {
-  const { language } = useContext(LanguageContext);
-  const { name, setName } = useContext(NameContext);
+  const { language, setName } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,11 +15,13 @@ const Name = () => {
     } else {
       setError("Unesite validno ime.");
     }
+    setValue('');
   }, [language]);
 
   return (
     <div className="relative w-full z-0 group h-[75px]">
       <input
+      autoFocus
         type="text"
         name="Ime"
         id="floating_filled_name"

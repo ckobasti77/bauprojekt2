@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 import { Name, Surname, Street, StreetNumber, Location, PhoneNumber, Email } from "../inputs/inputs"
 
 
 const Applicant = () => {
-  const { language } = useContext(LanguageContext);
+  const { language } = useContext(ContextAll);
 
   return (
     <div className='w-full'>

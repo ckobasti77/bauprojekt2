@@ -9,6 +9,8 @@ import Parcel2 from "./Parcel2";
 import Parcel3 from "./Parcel3";
 import Parcels from "./Parcels";
 import Uplatnica from "./Uplatnica";
+import Table from "./Table";
+import Admin from "./Admin";
 
 
 export {
@@ -23,5 +25,7 @@ export {
     Parcel3,
     Parcels,
     Uplatnica,
+    Table,
+    Admin,
     
 }

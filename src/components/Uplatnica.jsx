@@ -1,17 +1,12 @@
 import React, { useState, useContext } from "react";
 import QRCode from "qrcode.react";
-import { LanguageContext, NameContext, SurnameContext, StreetContext, StreetNumberContext, LocationContext } from "../context/context";
+import { ContextAll } from "../context/context";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { BiScreenshot } from 'react-icons/bi';
 import html2canvas from 'html2canvas';
 
 function Uplatnica({ setShowPayCheck }) {
-  const { language } = useContext(LanguageContext);
-  const { name } = useContext(NameContext);
-  const { surname } = useContext(SurnameContext);
-  const { street } = useContext(StreetContext);
-  const { streetNumber } = useContext(StreetNumberContext);
-  const { location } = useContext(LocationContext);
+  const { language, name, surname, street, streetNumber, location } = useContext(ContextAll);
 
   const takeScreenshot = () => {
     html2canvas(document.querySelector("#screenshot")).then(canvas => {
@@ -38,7 +33,7 @@ function Uplatnica({ setShowPayCheck }) {
         className="screen-uplatnica absolute left-[22px] top-[15px] text-white font-bold text-md transform translate-y-[3px] hover:text-[#2ea295] hover:translate-y-[0px] transition-all duration-150"
         onClick={takeScreenshot}
       >
-        {language === 'cir' ? 'Скриншотуј уплатницу' : 'Skrinšotuj uplatnicu'}<BiScreenshot className="inline w-[30px] text-2xl"/>
+        {language === 'cir' ? 'Сачувај уплатницу' : 'Sačuvaj uplatnicu'}<BiScreenshot className="inline w-[30px] text-2xl"/>
       </button>
       
       <div id="screenshot" className="uplatnica bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">

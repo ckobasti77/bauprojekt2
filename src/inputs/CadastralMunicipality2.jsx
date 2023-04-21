@@ -1,10 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
-const CadastralMunicipality = () => {
-  const { language } = useContext(LanguageContext);
+const CadastralMunicipality2 = () => {
+  const { language, setCadastralMunicipality2 } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -15,6 +15,7 @@ const CadastralMunicipality = () => {
     } else {
       setError("Unesite validnu opštinu.");
     }
+    setValue('');
   }, [language]);
 
   return (
@@ -26,6 +27,7 @@ const CadastralMunicipality = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
+          setCadastralMunicipality2(e.target.value);
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
             ? setError("")
             : language === "cir"
@@ -61,4 +63,4 @@ const CadastralMunicipality = () => {
   );
 };
 
-export default CadastralMunicipality;
+export default CadastralMunicipality2;

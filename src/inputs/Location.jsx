@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext, LocationContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Location = () => {
-  const { language } = useContext(LanguageContext);
-  const { location, setLocation } = useContext(LocationContext);
+  const { language, setLocation } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,6 +15,7 @@ const Location = () => {
     } else {
       setError("Unesite validnu lokaciju.");
     }
+    setValue('');
   }, [language]);
 
   return (
@@ -26,8 +26,8 @@ const Location = () => {
         id="floating_filled_location"
         value={value}
         onChange={(e) => {
-          setLocation(e.target.value);
           setValue(e.target.value);
+          setLocation(e.target.value);
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}|[A-ZČĆŠĐŽ][a-zčćšđž]{0,28})( [А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}| [A-ZČĆŠĐŽ][a-zčćšđž]{0,28}){0,3}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

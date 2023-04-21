@@ -1,11 +1,10 @@
 import React, { useState, useContext, useEffect } from "react";
-import { LanguageContext, StreetContext } from "../context/context";
+import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
 
 const Street = () => {
-  const { language } = useContext(LanguageContext);
-  const { street, setStreet } = useContext(StreetContext);
+  const { language, setStreet } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -16,6 +15,7 @@ const Street = () => {
     } else {
       setError("Unesite validan naziv ulice.");
     }
+    setValue('');
   }, [language]);
 
   return (
@@ -28,7 +28,7 @@ const Street = () => {
         onChange={(e) => {
           setStreet(e.target.value);
           setValue(e.target.value);
-          /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}|[A-ZČĆŠĐŽ][a-zčćšđž]{0,28})( [А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{0,28}| [A-ZČĆŠĐŽ][a-zčćšđž]{0,28}){0,3}$/.test(
+          /^[А-Яа-яA-Za-zČčĆćĐđŠšŽžЋћЂђЏџ0-9\s\.\-\']+$/.test(
             e.target.value
           )
             ? setError("")
