@@ -195,15 +195,16 @@ function App() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/zahtevi",
+        "https://bauprojekt-be.vercel.app/zahtevi",
         podaci
-      );
-      const data = await response.data;
-      // console.log(data);
-      // navigate(from, { replace: true });
-    } catch (err) {
-      console.log(err);
-    }
+        );
+        const data = await response.data;
+        // console.log(data);
+        // navigate(from, { replace: true });
+      } catch (err) {
+        console.log(err);
+      }
+    location.reload();
   };
 
   const [showAdmin, setShowAdmin] = useState(false);
@@ -238,6 +239,8 @@ function App() {
               <img src={check} alt="qr" className="inline ml-3" />
             </button>
             <Rules />
+
+            
             <button
               type="submit"
               className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
