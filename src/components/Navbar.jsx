@@ -35,7 +35,7 @@ const Navbar = ({ setShowTable, setShowAdmin }) => {
           {language === "cir" ? "Латиница" : "Latinica"}
         </label>
       </div>
-      <span className="rounded-lg bg-slate-600 px-6 py-1 cursor-pointer" onClick={() => setShowAdmin(true)}>Admin</span>
+      <span className="rounded-lg bg-slate-600 px-6 py-1 cursor-pointer admin-button" onClick={() => setShowAdmin(true)}>Admin</span>
     </div>
   );
 };
