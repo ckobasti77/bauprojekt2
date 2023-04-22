@@ -195,7 +195,7 @@ function App() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:3000/zahtevi",
+        "https://bp-be.onrender.com/zahtevi",
         podaci
         );
         const data = await response.data;

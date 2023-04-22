@@ -8,7 +8,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3000/zahtevi")
+      .get("https://bp-be.onrender.com/zahtevi")
       .then((response) => {
         setPodaci(response.data);
       })
