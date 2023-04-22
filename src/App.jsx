@@ -195,12 +195,10 @@ function App() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "https://bauprojekt-be.vercel.app/zahtevi",
+        "http://localhost:3000/zahtevi",
         podaci
         );
         const data = await response.data;
-        // console.log(data);
-        // navigate(from, { replace: true });
       } catch (err) {
         console.log(err);
       }

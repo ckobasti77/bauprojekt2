@@ -8,7 +8,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
 
   useEffect(() => {
     axios
-      .get("https://bauprojekt-be.vercel.app/zahtevi")
+      .get("http://localhost:3000/zahtevi")
       .then((response) => {
         setPodaci(response.data);
       })
