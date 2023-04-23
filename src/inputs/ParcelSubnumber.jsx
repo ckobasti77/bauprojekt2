@@ -16,7 +16,9 @@ const ParcelSubnumber = () => {
       } else {
         setError("Maksimum 5 karaktera.");
       }
-    } 
+    } else {
+      setError("");
+    }
   }, [language, value]);
 
   useEffect(() => {

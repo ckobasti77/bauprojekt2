@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 import { ContextAll } from "../context/context";
 
+
 const Admin = ({ setShowAdmin, setShowTable }) => {
   const { language } = useContext(ContextAll);
 
@@ -10,7 +11,7 @@ const Admin = ({ setShowAdmin, setShowTable }) => {
 
 
   useEffect(() => {
-    if(ime === 'bau2023' && sifra === 'projekt') {
+    if(ime === "bau2023" && sifra === "projekt") {
       if(navigator.vibrate) {
         navigator.vibrate(500)
       }

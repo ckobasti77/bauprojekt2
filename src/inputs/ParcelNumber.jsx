@@ -16,6 +16,8 @@ const ParcelNumber = () => {
       } else {
         setError("Maksimum 5 karaktera.");
       }
+    } else {
+      setError("");
     }
   }, [language, value]);
 

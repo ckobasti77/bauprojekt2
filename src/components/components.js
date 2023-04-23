@@ -11,6 +11,7 @@ import Parcels from "./Parcels";
 import Uplatnica from "./Uplatnica";
 import Table from "./Table";
 import Admin from "./Admin";
+import Submit from "./Submit";
 
 
 export {
@@ -27,5 +28,6 @@ export {
     Uplatnica,
     Table,
     Admin,
-    
+    Submit,
+
 }

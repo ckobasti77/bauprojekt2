@@ -296,3 +296,20 @@ input[type="number"]::-webkit-outer-spin-button {
     display: none;
   }
 }
+
+.spinnin {
+  border: 5px solid transparent;
+  border-top: 5px solid #fff;
+  width: 28px;
+  height: 28px;
+  animation: spin 0.5s infinite linear;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -4,6 +4,8 @@ import warning from './warning.png'
 import uplatnica from './uplatnica.png'
 import qr from './qr.png';
 import check from './check.png';
+import success from './success.png';
+import error from './error.png';
 
 export {
     instagram,
@@ -12,5 +14,6 @@ export {
     uplatnica,
     qr,
     check,
-    
+    success,
+    error
 }

@@ -16,7 +16,9 @@ const ParcelNumber3 = () => {
       } else {
         setError("Maksimum 5 karaktera.");
       }
-    } 
+    } else {
+      setError("");
+    }
   }, [language, value]);
 
   useEffect(() => {
