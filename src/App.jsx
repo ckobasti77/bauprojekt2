@@ -59,6 +59,8 @@ function App() {
     vrstaZahteva: "Standardan",
     dostavitiPutem: "Pošta",
   });
+  
+  
 
   useEffect(() => {
     setTimeout(() => {
@@ -110,6 +112,7 @@ function App() {
           ],
           "vrstaZahteva": requestType,
           "dostavitiPutem": locationInfo,
+          "statusZahteva": "Podnet",
         }
       );
     } else if (
@@ -137,6 +140,7 @@ function App() {
           ],
           "vrstaZahteva": requestType,
           "dostavitiPutem": locationInfo,
+          "statusZahteva": "Podnet",
         }
       );
     } else {
@@ -167,10 +171,10 @@ function App() {
           ],
           "vrstaZahteva": requestType,
           "dostavitiPutem": locationInfo,
+          "statusZahteva": "Podnet",
         }
       );
     }
-    // console.log(podaci);
   }, [
     name,
     surname,
@@ -210,11 +214,6 @@ function App() {
     location.reload();
   };
 
-  useEffect(() => {
-    console.log(submit);
-  }, [submit])
-
-
   const [showAdmin, setShowAdmin] = useState(false);
 
   return (
@@ -247,14 +246,6 @@ function App() {
               <img src={check} alt="qr" className="inline ml-3" />
             </button>
             <Rules />
-
-            
-            {/* <button
-              type="submit"
-              className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
-            >
-              {language === "cir" ? "Поднеси захтев" : "Podnesi zahtev"}
-            </button> */}
             <Submit submit={submit} />
           </div>
         </form>

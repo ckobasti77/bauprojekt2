@@ -1,19 +1,51 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { BsSave } from "react-icons/bs";
 
 import axios from "axios";
 
 const Table = ({ setShowTable, setShowAdmin }) => {
   const [podaci, setPodaci] = useState([]);
+  const [selektovaniRedovi, setSelektovaniRedovi] = useState([]);
 
+  
   useEffect(() => {
     axios
-      .get("https://bp-be.onrender.com/zahtevi")
-      .then((response) => {
-        setPodaci(response.data);
-      })
-      .catch((error) => console.log(error));
+    .get("https://bp-be.onrender.com/zahtevi")
+    .then((response) => {
+      setPodaci(response.data);
+    })
+    .catch((error) => console.log(error));
   }, []);
+
+  const [status, setStatus] = useState(podaci.statusZahteva);
+
+  const handleSelectChange = (e, i) => {
+    const updatedPodaci = [...podaci];
+    updatedPodaci[i].status = e.target.value;
+    setPodaci(updatedPodaci);
+
+    if (!selectedRows.includes(i)) {
+      setSelectedRows([...selectedRows, i]);
+    }
+  };
+
+  const handleSaveClick = async () => {
+    const requestsToUpdate = selectedRows.map(index => {
+      return {
+        "id": podaci[index]._id,
+        "statusZahteva": podaci[index].statusZahteva
+      };
+    });
+
+    await axios.put('/api/requests', requestsToUpdate);
+
+    setSelectedRows([]);
+  };
+  
+  // useEffect(() => {
+  //   console.log(status);
+  // }, [status]);
 
   return (
     <div className="overflow-x-scroll shadow-md fixed z-[99999] h-screen w-screen bg-[#e0e0e0]">
@@ -58,6 +90,12 @@ const Table = ({ setShowTable, setShowAdmin }) => {
             </th>
             <th scope="col" className="text-center px-6 py-3">
               Vreme <br /> podnošenja
+            </th>
+            <th scope="col" className="text-center px-6 py-3">
+              Status <br /> zahteva
+            </th>
+            <th scope="col" className="flex items-center justify-center pt-5 pl-5">
+              <BsSave className="transform scale-150"/>
             </th>
           </tr>
         </thead>
@@ -126,6 +164,16 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                        second: "2-digit",
                        hour12: false,
                     })}
+                  </td>
+                  <td>
+                    <select value={podaci.statusZahteva} onChange={handleSelectChange} id={`select-${i}`} class="flex items-center justify-center w-full p-2 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                      <option selected value="Podnet">Podnet</option>
+                      <option value="Uplaceno">Uplaceno</option>
+                      <option value="Zavrsen">Zavrsen</option>
+                    </select>
+                  </td>
+                  <td className="pl-6">
+                    <button disabled className="rounded-lg bg-slate-600 px-6 py-1 cursor-pointer admin-button text-[#e0e0e0] ">Sačuvaj</button>
                   </td>
                 </tr>
               );

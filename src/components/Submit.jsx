@@ -18,7 +18,7 @@ const Submit = ({ submit }) => {
   return (
     <button
         type="submit"
-        className={`${!submit && 'block'} ${submit && 'flex items-center justify-center'} py-3 px-6 w-[154.4px] h-[48px] rounded-xl mx-auto my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium`}
+        className={`${!submit && 'block'} ${submit && 'flex items-center justify-center'} whitespace-nowrap py-3 px-6 w-[154.4px] h-[48px] rounded-xl mx-auto my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium`}
     >
         {!submit && subButText}
         {submit === 'loading' && (<p className="spinnin text-transparent border-white border-t-[3px] rounded-full"></p>)}
