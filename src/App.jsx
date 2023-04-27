@@ -17,6 +17,9 @@ import {
   Submit,
 } from "./components/components";
 
+import { LocationInfo } from "./inputs/inputs";
+
+
 import { qr, check } from "./assets/assets";
 
 function App() {
@@ -207,10 +210,10 @@ function App() {
         );
         const data = await response.data;
         setSubmit('success');
-      } catch (err) {
-        console.log(err);
-        setSubmit('error');
-      }
+    } catch (err) {
+      console.log(err);
+      setSubmit('error');
+    }
     location.reload();
   };
 
@@ -231,10 +234,9 @@ function App() {
           className="w-full md:w-[640px] mx-auto form p-4"
         >
           <div className="w-full md:w-[600px] md:px-0 md:mx-auto">
-            <Applicant />
-          </div>
-          <div className="w-full md:w-[600px] md:px-0 md:mx-auto">
             <Request />
+            <Applicant />
+            <LocationInfo />
             <button
               className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
               onClick={(e) => {

@@ -9,12 +9,11 @@ const Request = () => {
 
   return (
     <div className="w-full">
-      <h2 className="text-center mt-2 mb-5 text-3xl">
+      <h2 className="text-center mt-2 mb-5 text-4xl">
         {language === "cir" ? "Захтев" : "Zahtev"}
       </h2>
       <Parcels />
       <RequestType />
-      <LocationInfo />
     </div>
   );
 };

@@ -7,7 +7,7 @@ const Applicant = () => {
   const { language } = useContext(ContextAll);
 
   return (
-    <div className='w-full'>
+    <div className='w-full mt-8'>
         <h1 className='text-center mt-2 mb-5 text-4xl'>{language === 'cir' ? 'Подносилац захтева' : 'Podnosilac zahteva'}</h1>
         <Name />
         <Surname />
