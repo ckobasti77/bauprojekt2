@@ -313,3 +313,8 @@ input[type="number"]::-webkit-outer-spin-button {
     transform: rotate(360deg);
   }
 }
+
+.kanta svg {
+  width: 24px;
+  height: 24px;
+}

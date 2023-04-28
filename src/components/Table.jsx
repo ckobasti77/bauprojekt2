@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { AiOutlineCloseCircle } from "react-icons/ai";
+import { AiOutlineCloseCircle, AiOutlineDelete } from "react-icons/ai";
 import { BsSave } from "react-icons/bs";
 
 import axios from "axios";
@@ -21,7 +21,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
   }, []);
 
   const handleSelectChange = (e, id) => {
-    const { value } = event.target;
+    const { value } = e.target;
     e.preventDefault();
 
     axios.put(`https://bp-be.onrender.com/zahtevi/${id}`, { statusZahteva: value })
@@ -33,39 +33,11 @@ const Table = ({ setShowTable, setShowAdmin }) => {
       });
   };
 
-   
-  useEffect(() => {
-    console.log(singleRow);
-  }, [singleRow]);
-
-  const sacuvajIzmene = async (id) => {
-    try {
-      const response = await axios.put(
-        `https://bp-be.onrender.com/zahtevi/${id}`,
-        singleRow
-        );
-        const data = await response.data;
-        console.log(data);
-        setSingleRow({});
-    } catch (err) {
-      console.log(err);
-    }
+  const deleteRequest = (id) => {
+    axios
+      .delete(`https://bp-be.onrender.com/zahtevi/${id}`)
+      .catch(error => console.log(error)) 
   }
-
- 
-
-  // const handleSaveClick = async () => {
-  //   const requestsToUpdate = selectedRows.map(index => {
-  //     return {
-  //       "id": podaci[index]._id,
-  //       "statusZahteva": podaci[index].statusZahteva
-  //     };
-  //   });
-
-  //   await axios.put('/api/requests', requestsToUpdate);
-
-  //   setSelectedRows([]);
-  // };
 
   const tabela = document.getElementById("tabela");
 
@@ -144,6 +116,9 @@ const Table = ({ setShowTable, setShowAdmin }) => {
             </th>
             <th scope="col" className="text-center px-6 py-3">
               Status <br /> zahteva
+            </th>
+            <th scope="col" className="kanta flex justify-center items-center px-6 py-3">
+              <AiOutlineDelete />
             </th>
           </tr>
         </thead>
@@ -334,6 +309,14 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                       <option selected={jedan.statusZahteva === 'Uplacen' ? true : false} value="Uplacen">Uplacen</option>
                       <option selected={jedan.statusZahteva === 'Zavrsen' ? true : false} value="Zavrsen">Zavrsen</option>
                     </select>
+                  </td>
+                  <td>
+                    <button 
+                      className="px-4 py-2 bg-[#c70000]/75 hover:bg-[#c70000] whitespace-nowrap mx-4 text-[#e0e0e0] rounded-full"
+                      onClick={() => deleteRequest(jedan._id)}
+                    >
+                      Obriši zahtev
+                    </button>
                   </td>
                 </tr>
               );
