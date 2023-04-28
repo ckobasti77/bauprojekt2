@@ -1,5 +1,4 @@
 import React, { useState, useContext, useEffect } from "react";
-import { useNavigate } from "react-router-dom";
 import { ContextAll } from "./context/context";
 
 import axios from "axios";
@@ -221,8 +220,9 @@ function App() {
 
   return (
     <>
+      
       {showAdmin && <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} />}
-      {showTable && <Table showTable={showTable} setShowTable={setShowTable} setShowAdmin={setShowAdmin} />}
+      {showTable && <Table showTable={showTable} setShowTable={setShowTable} setShowAdmin={setShowAdmin}/>}
       {loader && <Loader />}
       {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} />}
       <div className="App w-full">
@@ -253,6 +253,7 @@ function App() {
         </form>
         <Footer />
       </div>
+      
     </>
   );
 }
