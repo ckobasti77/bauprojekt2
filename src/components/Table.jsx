@@ -145,7 +145,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                   </td>
                   <td className="text-center px-6 py-4 whitespace-nowrap">{jedan.mesto}</td>
                   <td className="text-center px-6 py-4 whitespace-nowrap">{jedan.telefon}</td>
-                  <td className="text-center px-6 py-4 whitespace-nowrap ">{jedan.email}</td>
+                  <td className="text-center px-6 py-4 whitespace-nowrap"><a className="underline underline-offset-2 hover:text-[#0645AD] transition-all duration-50" href={`mailto:${jedan.email}`}>{jedan.email}</a></td>
                   <td className="text-center px-6 py-4 flex justify-between whitespace-nowrap">
                     <div className="flex flex-col">
                       <span className="text-center font-bold px-6 pb-6">
@@ -318,7 +318,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                   </td>
                   <td>
                     <button 
-                      className="px-4 py-2 bg-[#c70000]/75 hover:bg-[#c70000] whitespace-nowrap mx-4 text-[#e0e0e0] rounded-full"
+                      className="px-4 py-2 bg-[#c70000]/75 hover:bg-[#c70000] whitespace-nowrap mx-4 text-[#e0e0e0] rounded-lg"
                       onClick={() => deleteRequest(jedan._id)}
                     >
                       Obriši zahtev
