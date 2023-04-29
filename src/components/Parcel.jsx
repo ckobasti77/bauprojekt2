@@ -11,7 +11,7 @@ const Parcel = () => {
   const { language } = useContext(ContextAll);
 
   return (
-    <>
+    <div className="parc">
       <h2 className="text-center mt-2 mb-5 text-md">
         {language === "cir" ? "Парцела 1" : "Parcela 1"}
       </h2>
@@ -20,7 +20,7 @@ const Parcel = () => {
         <ParcelSubnumber />
       </div>
       <CadastralMunicipality />
-    </>
+    </div>
   );
 };
 

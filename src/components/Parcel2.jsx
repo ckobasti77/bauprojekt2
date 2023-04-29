@@ -11,7 +11,7 @@ const Parcel = ({ setNumber2, number3 }) => {
   const { language } = useContext(ContextAll);
 
   return (
-    <div className="relative">
+    <div className="relative parc">
       <span
         className={`iks ${number3 ? 'cursor-default' : 'transition-all duration-200 ease-out hover:text-[#ee3b47] hover:scale-125 cursor-pointer hover:select-none'} rotate-45 absolute top-0 right-0 rounded-full mx-auto w-[25px] h-[25px] bg-[#fff] text-[#ee3b47] lg:text-[#6b7280] text-2xl pb-1 font-bold flex items-center justify-center `}
         title={`${

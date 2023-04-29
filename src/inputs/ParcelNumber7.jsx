@@ -4,7 +4,7 @@ import { ContextAll } from "../context/context";
 import { warning } from "../assets/assets";
 
 const ParcelNumber3 = () => {
-  const { language, setParcelNumber3} = useContext(ContextAll);
+  const { language, setParcelNumber7} = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
@@ -34,7 +34,7 @@ const ParcelNumber3 = () => {
         value={value}
         onChange={(e) => {
           setValue(e.target.value);
-          setParcelNumber3(e.target.value);
+          setParcelNumber7(e.target.value);
         }}
         className={`${
           error.length > 0 && value.length > 0

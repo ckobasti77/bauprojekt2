@@ -18,7 +18,6 @@ import {
 
 import { LocationInfo } from "./inputs/inputs";
 
-
 import { qr, check } from "./assets/assets";
 
 function App() {
@@ -40,29 +39,46 @@ function App() {
     parcelNumber3,
     parcelSubnumber3,
     cadastralMunicipality3,
+    parcelNumber4,
+    parcelSubnumber4,
+    cadastralMunicipality4,
+    parcelNumber5,
+    parcelSubnumber5,
+    cadastralMunicipality5,
+    parcelNumber6,
+    parcelSubnumber6,
+    cadastralMunicipality6,
+    parcelNumber7,
+    parcelSubnumber7,
+    cadastralMunicipality7,
+    parcelNumber8,
+    parcelSubnumber8,
+    cadastralMunicipality8,
+    parcelNumber9,
+    parcelSubnumber9,
+    cadastralMunicipality9,
+    parcelNumber10,
+    parcelSubnumber10,
+    cadastralMunicipality10,
     requestType,
     locationInfo,
+    number2,
+    number3,
+    number4,
+    number5,
+    number6,
+    number7,
+    number8,
+    number9,
+    number10,
   } = useContext(ContextAll);
 
-  const [showTable, setShowTable] = useState(false)
+  const [showTable, setShowTable] = useState(false);
 
   const [loader, setLoader] = useState(true);
   const [showPayCheck, setShowPayCheck] = useState(false);
 
-  const [podaci, setPodaci] = useState({
-    ime: "Zoranaaa",
-    prezime: "Mihajlovic",
-    ulica: "Mis",
-    broj: "11",
-    mesto: "Beograd",
-    telefon: "+381 65 123 45 67",
-    email: "testemail@gmail.com",
-    parcele: [{ broj: "111", podbroj: "111", katastarskaOpstina: "Leposavic" }],
-    vrstaZahteva: "Standardan",
-    dostavitiPutem: "Pošta",
-  });
-  
-  
+  const [podaci, setPodaci] = useState({});
 
   useEffect(() => {
     setTimeout(() => {
@@ -70,112 +86,532 @@ function App() {
     }, 2000);
   }, []);
 
-  const podatci = {
-    ime: "Zoranaaa",
-    prezime: "Mihajlovic",
-    ulica: "Mis",
-    broj: "11",
-    mesto: "Beograd",
-    telefon: "+381 65 123 45 67",
-    email: "testemail@gmail.com",
-    parcele: [{ broj: "111", podbroj: "111", katastarskaOpstina: "Leposavic" }],
-    vrstaZahteva: "Standardan",
-    dostavitiPutem: "Pošta",
-  };
-
   useEffect(() => {
     if (
-      !parcelNumber3 &&
-      !parcelSubnumber3 &&
-      !cadastralMunicipality3 &&
-      parcelNumber2 &&
-      parcelSubnumber2 &&
-      cadastralMunicipality2
+      !number2 &&
+      !number3 &&
+      !number4 &&
+      !number5 &&
+      !number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
     ) {
       setPodaci({
-          "ime": name,
-          "prezime": surname,
-          "ulica": street,
-          "broj": streetNumber,
-          "mesto": location,
-          "telefon": phoneNumber,
-          "email": email,
-          "parcele": [
-            {
-              "broj": parcelNumber,
-              "podbroj": parcelSubnumber,
-              "katastarskaOpstina": cadastralMunicipality,
-            },
-            parcelNumber2 && {
-              "broj": parcelNumber2,
-              "podbroj": parcelSubnumber2,
-              "katastarskaOpstina": cadastralMunicipality2,
-            },
-          ],
-          "vrstaZahteva": requestType,
-          "dostavitiPutem": locationInfo,
-          "statusZahteva": "Podnet",
-        }
-      );
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
     } else if (
-      !parcelNumber2 &&
-      !parcelSubnumber2 &&
-      !cadastralMunicipality2 &&
-      parcelNumber &&
-      parcelSubnumber &&
-      cadastralMunicipality
+      number2 &&
+      !number3 &&
+      !number4 &&
+      !number5 &&
+      !number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
     ) {
       setPodaci({
-          "ime": name,
-          "prezime": surname,
-          "ulica": street,
-          "broj": streetNumber,
-          "mesto": location,
-          "telefon": phoneNumber,
-          "email": email,
-          "parcele": [
-            {
-              "broj": parcelNumber,
-              "podbroj": parcelSubnumber,
-              "katastarskaOpstina": cadastralMunicipality,
-            },
-          ],
-          "vrstaZahteva": requestType,
-          "dostavitiPutem": locationInfo,
-          "statusZahteva": "Podnet",
-        }
-      );
-    } else {
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      !number4 &&
+      !number5 &&
+      !number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
+    ) {
       setPodaci({
-          "ime": name,
-          "prezime": surname,
-          "ulica": street,
-          "broj": streetNumber,
-          "mesto": location,
-          "telefon": phoneNumber,
-          "email": email,
-          "parcele": [
-            {
-              "broj": parcelNumber,
-              "podbroj": parcelSubnumber,
-              "katastarskaOpstina": cadastralMunicipality,
-            },
-            parcelNumber2 && {
-              "broj": parcelNumber2,
-              "podbroj": parcelSubnumber2,
-              "katastarskaOpstina": cadastralMunicipality2,
-            },
-            parcelNumber3 && {
-              "broj": parcelNumber3,
-              "podbroj": parcelSubnumber3,
-              "katastarskaOpstina": cadastralMunicipality3,
-            },
-          ],
-          "vrstaZahteva": requestType,
-          "dostavitiPutem": locationInfo,
-          "statusZahteva": "Podnet",
-        }
-      );
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      !number5 &&
+      !number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      !number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      number6 &&
+      !number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+          {
+            broj: parcelNumber6,
+            podbroj: parcelSubnumber6,
+            katastarskaOpstina: cadastralMunicipality6,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      number6 &&
+      number7 &&
+      !number8 &&
+      !number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+          {
+            broj: parcelNumber6,
+            podbroj: parcelSubnumber6,
+            katastarskaOpstina: cadastralMunicipality6,
+          },
+          {
+            broj: parcelNumber7,
+            podbroj: parcelSubnumber7,
+            katastarskaOpstina: cadastralMunicipality7,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      number6 &&
+      number7 &&
+      number8 &&
+      !number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+          {
+            broj: parcelNumber6,
+            podbroj: parcelSubnumber6,
+            katastarskaOpstina: cadastralMunicipality6,
+          },
+          {
+            broj: parcelNumber7,
+            podbroj: parcelSubnumber7,
+            katastarskaOpstina: cadastralMunicipality7,
+          },
+          {
+            broj: parcelNumber8,
+            podbroj: parcelSubnumber8,
+            katastarskaOpstina: cadastralMunicipality8,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      number6 &&
+      number7 &&
+      number8 &&
+      number9 &&
+      !number10
+    ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+          {
+            broj: parcelNumber6,
+            podbroj: parcelSubnumber6,
+            katastarskaOpstina: cadastralMunicipality6,
+          },
+          {
+            broj: parcelNumber7,
+            podbroj: parcelSubnumber7,
+            katastarskaOpstina: cadastralMunicipality7,
+          },
+          {
+            broj: parcelNumber8,
+            podbroj: parcelSubnumber8,
+            katastarskaOpstina: cadastralMunicipality8,
+          },
+          {
+            broj: parcelNumber9,
+            podbroj: parcelSubnumber9,
+            katastarskaOpstina: cadastralMunicipality9,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
+    } else if (
+      number2 &&
+      number3 &&
+      number4 &&
+      number5 &&
+      number6 &&
+      number7 &&
+      number8 &&
+      number9 &&
+      number10
+      ) {
+      setPodaci({
+        ime: name,
+        prezime: surname,
+        ulica: street,
+        broj: streetNumber,
+        mesto: location,
+        telefon: phoneNumber,
+        email: email,
+        parcele: [
+          {
+            broj: parcelNumber,
+            podbroj: parcelSubnumber,
+            katastarskaOpstina: cadastralMunicipality,
+          },
+          {
+            broj: parcelNumber2,
+            podbroj: parcelSubnumber2,
+            katastarskaOpstina: cadastralMunicipality2,
+          },
+          {
+            broj: parcelNumber3,
+            podbroj: parcelSubnumber3,
+            katastarskaOpstina: cadastralMunicipality3,
+          },
+          {
+            broj: parcelNumber4,
+            podbroj: parcelSubnumber4,
+            katastarskaOpstina: cadastralMunicipality4,
+          },
+          {
+            broj: parcelNumber5,
+            podbroj: parcelSubnumber5,
+            katastarskaOpstina: cadastralMunicipality5,
+          },
+          {
+            broj: parcelNumber6,
+            podbroj: parcelSubnumber6,
+            katastarskaOpstina: cadastralMunicipality6,
+          },
+          {
+            broj: parcelNumber7,
+            podbroj: parcelSubnumber7,
+            katastarskaOpstina: cadastralMunicipality7,
+          },
+          {
+            broj: parcelNumber8,
+            podbroj: parcelSubnumber8,
+            katastarskaOpstina: cadastralMunicipality8,
+          },
+          {
+            broj: parcelNumber9,
+            podbroj: parcelSubnumber9,
+            katastarskaOpstina: cadastralMunicipality9,
+          },
+          {
+            broj: parcelNumber10,
+            podbroj: parcelSubnumber10,
+            katastarskaOpstina: cadastralMunicipality10,
+          },
+        ],
+        vrstaZahteva: requestType,
+        dostavitiPutem: locationInfo,
+        statusZahteva: "Podnet",
+      });
     }
   }, [
     name,
@@ -194,37 +630,73 @@ function App() {
     parcelNumber3,
     parcelSubnumber3,
     cadastralMunicipality3,
+    parcelNumber4,
+    parcelSubnumber4,
+    cadastralMunicipality4,
+    parcelNumber5,
+    parcelSubnumber5,
+    cadastralMunicipality5,
+    parcelNumber6,
+    parcelSubnumber6,
+    cadastralMunicipality6,
+    parcelNumber7,
+    parcelSubnumber7,
+    cadastralMunicipality7,
+    parcelNumber8,
+    parcelSubnumber8,
+    cadastralMunicipality8,
+    parcelNumber9,
+    parcelSubnumber9,
+    cadastralMunicipality9,
+    parcelNumber10,
+    parcelSubnumber10,
+    cadastralMunicipality10,
     requestType,
     locationInfo,
+    number2,
+    number3,
+    number4,
+    number5,
+    number6,
+    number7,
+    number8,
+    number9,
+    number10,
   ]);
-  const [submit, setSubmit] = useState('');
-  
+  const [submit, setSubmit] = useState("");
+
   const handleSubmit = async (e) => {
-    setSubmit('loading');
+    setSubmit("loading");
     e.preventDefault();
     try {
       const response = await axios.post(
         "https://bp-be.onrender.com/zahtevi",
         podaci
-        );
-        const data = await response.data;
-        setSubmit('success');
+      );
+      const data = await response.data;
+      setSubmit("success");
     } catch (err) {
       console.log(err);
-      setSubmit('error');
+      setSubmit("error");
     }
-    location.reload();
   };
 
   const [showAdmin, setShowAdmin] = useState(false);
 
   return (
     <>
-      
-      {showAdmin && <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} />}
-      {showTable && <Table showTable={showTable} setShowTable={setShowTable} setShowAdmin={setShowAdmin}/>}
+      {showAdmin && (
+        <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} />
+      )}
+      {showTable && (
+        <Table
+          showTable={showTable}
+          setShowTable={setShowTable}
+          setShowAdmin={setShowAdmin}
+        />
+      )}
       {loader && <Loader />}
-      {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} />}
+      {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} showPayCheck={showPayCheck}/>}
       <div className="App w-full">
         <Navbar setShowAdmin={setShowAdmin} />
         <form
@@ -253,7 +725,6 @@ function App() {
         </form>
         <Footer />
       </div>
-      
     </>
   );
 }

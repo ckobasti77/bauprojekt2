@@ -1,20 +1,51 @@
 import React, { useState, useContext } from "react";
 import { ContextAll } from "../context/context";
 
-import { Parcel, Parcel2, Parcel3, Parcel4, Parcel5, Parcel6, Parcel7, Parcel8, Parcel9, Parcel10,  } from "./components";
+import {
+  Parcel,
+  Parcel2,
+  Parcel3,
+  Parcel4,
+  Parcel5,
+  Parcel6,
+  Parcel7,
+  Parcel8,
+  Parcel9,
+  Parcel10,
+} from "./components";
 
 const Parcels = () => {
-  const { language } = useContext(ContextAll);
+  const {
+    language,
+    number2,
+    setNumber2,
+    number3,
+    setNumber3,
+    number4,
+    setNumber4,
+    number5,
+    setNumber5,
+    number6,
+    setNumber6,
+    number7,
+    setNumber7,
+    number8,
+    setNumber8,
+    number9,
+    setNumber9,
+    number10,
+    setNumber10,
+  } = useContext(ContextAll);
 
-  const [number2, setNumber2] = useState(false);
-  const [number3, setNumber3] = useState(false);
-  const [number4, setNumber4] = useState(false);
-  const [number5, setNumber5] = useState(false);
-  const [number6, setNumber6] = useState(false);
-  const [number7, setNumber7] = useState(false);
-  const [number8, setNumber8] = useState(false);
-  const [number9, setNumber9] = useState(false);
-  const [number10, setNumber10] = useState(false);
+  // const [number2, setNumber2] = useState(false);
+  // const [number3, setNumber3] = useState(false);
+  // const [number4, setNumber4] = useState(false);
+  // const [number5, setNumber5] = useState(false);
+  // const [number6, setNumber6] = useState(false);
+  // const [number7, setNumber7] = useState(false);
+  // const [number8, setNumber8] = useState(false);
+  // const [number9, setNumber9] = useState(false);
+  // const [number10, setNumber10] = useState(false);
 
   return (
     <>
@@ -113,7 +144,7 @@ const Parcels = () => {
           }`}
           onClick={() => setNumber8(true)}
         >
-         +
+          +
         </span>
       )}
       {number8 && <Parcel8 setNumber8={setNumber8} number9={number9} />}
@@ -127,7 +158,7 @@ const Parcels = () => {
           }`}
           onClick={() => setNumber9(true)}
         >
-         +
+          +
         </span>
       )}
       {number9 && <Parcel9 setNumber9={setNumber9} number10={number10} />}
@@ -141,7 +172,7 @@ const Parcels = () => {
           }`}
           onClick={() => setNumber10(true)}
         >
-         +
+          +
         </span>
       )}
       {number10 && <Parcel10 setNumber10={setNumber10} />}

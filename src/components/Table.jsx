@@ -151,7 +151,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                       <div className="flex">
                         <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[0].broj}</span></span>
                         <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[0].podbroj}</span></span>
-                        <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[0].katastarskaOpstina}</span></span>
+                        <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[0].katastarskaOpstina}</span></span>
                       </div>
                     </div>
                     <div className="flex flex-col">
@@ -163,7 +163,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[1].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[1].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[1].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[1].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -177,7 +177,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[2].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[2].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[2].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[2].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -191,7 +191,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[3].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[3].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[3].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[3].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -205,7 +205,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[4].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[4].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[4].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[4].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -219,7 +219,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[5].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[5].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[5].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[5].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -233,7 +233,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[6].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[6].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[6].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[6].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -247,7 +247,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[7].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[7].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[7].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[7].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -259,9 +259,9 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                             IX
                           </span>
                           <div className="flex">
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[8].broj}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <br /> <span>{jedan.parcele[8].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[8].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[8].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[8].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
@@ -275,13 +275,13 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                           <div className="flex">
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">BROJ</span> <span>{jedan.parcele[9].broj}</span></span>
                             <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">PODBROJ</span> <span>{jedan.parcele[9].podbroj}</span></span>
-                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">OPŠTINA</span> <span>{jedan.parcele[9].katastarskaOpstina}</span></span>
+                            <span className="px-6 py-3 flex flex-col items-center w-[33%]"><span className="mb-2 font-bold text-[12px]">KAT. OPŠTINA</span> <span>{jedan.parcele[9].katastarskaOpstina}</span></span>
                           </div>
                         </>
                       )}
                     </div>
                   </td>
-                  <td className="text-center px-6 py-4 whitespace-nowrap">
+                  <td className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-[#e36841] text-[#e0e0e0] rounded-xl'} text-center px-6 py-4 whitespace-nowrap`}>
                     {jedan.vrstaZahteva}
                   </td>
                   <td className="text-center px-6 py-4 whitespace-nowrap">
@@ -296,7 +296,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                        hour12: false,
                     })}
                   </td>
-                  <td className={`${jedan.statusZahteva === 'Uplacen' && 'bg-[#4bb543]/75'} ${jedan.statusZahteva === 'Zavrsen' && 'bg-[#4bb543]'} px-4`}>
+                  <td className={`${jedan.statusZahteva === 'Uplacen' && 'bg-[#4bb543]/75 rounded-xl'} ${jedan.statusZahteva === 'Zavrsen' && 'bg-[#4bb543] rounded-xl'} px-4`}>
                     <select 
                       defaultValue={jedan.statusZahteva} 
                       onChange={(e) => {

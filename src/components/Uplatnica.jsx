@@ -1,12 +1,42 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import QRCode from "qrcode.react";
 import { ContextAll } from "../context/context";
 import { AiOutlineCloseCircle } from 'react-icons/ai';
-import { BiScreenshot } from 'react-icons/bi';
+import { BsSave } from 'react-icons/bs';
 import html2canvas from 'html2canvas';
 
-function Uplatnica({ setShowPayCheck }) {
-  const { language, name, surname, street, streetNumber, location } = useContext(ContextAll);
+function Uplatnica({ setShowPayCheck, showPayCheck }) {
+  const { language, name, surname, street, streetNumber, requestType, brojParcela, location } = useContext(ContextAll);
+
+  const [cena, setCena] = useState();
+
+  useEffect(() => {
+    if(brojParcela <= 3) {
+      if(requestType === 'Standardan') {
+        setCena(parseInt(1000))
+      } else if(requestType === 'Hitan') {
+        setCena(parseInt(1500))
+      }
+    } else if (brojParcela > 3 && brojParcela <= 6) {
+      if(requestType === 'Standardan') {
+        setCena(parseInt(2000))
+      } else if(requestType === 'Hitan') {
+        setCena(parseInt(3000))
+      }
+    } else if (brojParcela > 6 && brojParcela <= 9) {
+      if(requestType === 'Standardan') {
+        setCena(parseInt(3000))
+      } else if(requestType === 'Hitan') {
+        setCena(parseInt(4500))
+      }
+    } else if (brojParcela > 9) {
+      if(requestType === 'Standardan') {
+        setCena(parseInt(4000))
+      } else if(requestType === 'Hitan') {
+        setCena(parseInt(6000))
+      }
+    }
+  }, [brojParcela, requestType, showPayCheck])
 
   const takeScreenshot = () => {
     html2canvas(document.querySelector("#screenshot")).then(canvas => {
@@ -33,7 +63,7 @@ function Uplatnica({ setShowPayCheck }) {
         className="screen-uplatnica absolute left-[22px] top-[15px] text-white font-bold text-md transform translate-y-[3px] hover:text-[#2ea295] hover:translate-y-[0px] transition-all duration-150"
         onClick={takeScreenshot}
       >
-        {language === 'cir' ? 'Сачувај уплатницу' : 'Sačuvaj uplatnicu'}<BiScreenshot className="inline w-[30px] text-2xl"/>
+        {language === 'cir' ? 'Сачувај уплатницу' : 'Sačuvaj uplatnicu'}<BsSave className="inline w-[30px] ml-2 text-2xl"/>
       </button>
       
       <div id="screenshot" className="uplatnica bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">
@@ -70,7 +100,7 @@ function Uplatnica({ setShowPayCheck }) {
                 </div>
                 <div className="w-[50%]">
                   <span className='text-[.75rem]'>{language === "cir" ? "износ" : "iznos"}</span>
-                  <p className="px-1 border border-1 border-black text-[.9rem]">5000</p>
+                  <p className="px-1 border border-1 border-black text-[.9rem]">{cena},00</p>
                 </div>
               </div>
               <div className="w-full">
@@ -85,7 +115,7 @@ function Uplatnica({ setShowPayCheck }) {
                 </div>
               </div>
               <div className="w-full">
-                <QRCode className="qr mx-auto w-[100px] my-4" size={100} value={`K:PR|V:01|C:1|R:205900102254529866|N:Jovan Milojevic, Beograd|I:RSD5000,00|SF:289|S:Transakcija gradjana`} />
+                <QRCode className="qr mx-auto w-[100px] my-4" size={100} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, Beograd|I:RSD${cena || 0},00|P:Kupac|SF:289|S:Transakcija gradjana`} />
               </div>
             </div>
           </div>

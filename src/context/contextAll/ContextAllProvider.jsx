@@ -47,10 +47,57 @@ const ContextAllProvider = ({ children }) => {
   const [cadastralMunicipality10, setCadastralMunicipality10] = useState("");
   const [requestType, setRequestType] = useState("");
   const [locationInfo, setLocationInfo] = useState("");
+  const [number2, setNumber2] = useState(false);
+  const [number3, setNumber3] = useState(false);
+  const [number4, setNumber4] = useState(false);
+  const [number5, setNumber5] = useState(false);
+  const [number6, setNumber6] = useState(false);
+  const [number7, setNumber7] = useState(false);
+  const [number8, setNumber8] = useState(false);
+  const [number9, setNumber9] = useState(false);
+  const [number10, setNumber10] = useState(false);
+  const [brojParcela, setBrojParcela] = useState(
+    document.querySelectorAll(".parc").length
+  );
+  // const [cena, setCena] = useState();
+  // const [brojParcelaSaTri, setBrojParcelaSaTri] = useState('');
+
+  useEffect(() => {
+    setBrojParcela(document.querySelectorAll(".parc").length);
+  }, [
+    number2,
+    number3,
+    number4,
+    number5,
+    number6,
+    number7,
+    number8,
+    number9,
+    number10,
+  ]);
+  
+  // useEffect(() => {
+  //   if(brojParcela < 3) {
+  //     setBrojParcelaSaTri(1);
+  //   } else {
+  //     setBrojParcelaSaTri(parseInt(brojParcela / 3));
+  //   }
+  // }, [brojParcela]);
+
+  // useEffect(() => {
+  //   if(vrstaZahteva === 'Standardan') {
+  //     setCena(brojParcelaSaTri * 1000)
+  //   } else if(vrstaZahteva === 'Hitan') {
+  //     setCena(brojParcelaSaTri * 1500)
+  //   }
+  //   console.log(cena);
+  // }, [brojParcelaSaTri, vrstaZahteva, showPayCheck])
 
   return (
     <ContextAll.Provider
       value={{
+        brojParcela,
+        setBrojParcela,
         language,
         setLanguage,
         name,
@@ -131,6 +178,24 @@ const ContextAllProvider = ({ children }) => {
         setRequestType,
         locationInfo,
         setLocationInfo,
+        number2,
+        setNumber2,
+        number3,
+        setNumber3,
+        number4,
+        setNumber4,
+        number5,
+        setNumber5,
+        number6,
+        setNumber6,
+        number7,
+        setNumber7,
+        number8,
+        setNumber8,
+        number9,
+        setNumber9,
+        number10,
+        setNumber10,
       }}
     >
       {children}

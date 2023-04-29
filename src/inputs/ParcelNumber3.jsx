@@ -4,7 +4,7 @@ import { ContextAll } from "../context/context";
 import { warning } from "../assets/assets";
 
 const ParcelNumber3 = () => {
-  const { language, setParcelNumber3} = useContext(ContextAll);
+  const { language, setParcelNumber3 } = useContext(ContextAll);
 
   const [value, setValue] = useState("");
   const [error, setError] = useState("");
