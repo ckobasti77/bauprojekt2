@@ -106,6 +106,9 @@ const Table = ({ setShowTable, setShowAdmin }) => {
               Zahtevi
             </th>
             <th scope="col" className="text-center px-6 py-3">
+              Poziv <br /> na broj
+            </th>
+            <th scope="col" className="text-center px-6 py-3">
               Vrsta <br /> zahteva
             </th>
             <th scope="col" className="text-center px-6 py-3">
@@ -280,6 +283,9 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                         </>
                       )}
                     </div>
+                  </td>
+                  <td className="text-center px-6 py-4 whitespace-nowrap">
+                    {jedan._id.replace(/\D/g, '')}
                   </td>
                   <td className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-[#e36841] text-[#e0e0e0] rounded-xl'} text-center px-6 py-4 whitespace-nowrap`}>
                     {jedan.vrstaZahteva}

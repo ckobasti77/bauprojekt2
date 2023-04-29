@@ -5,7 +5,7 @@ import { AiOutlineCloseCircle } from 'react-icons/ai';
 import { BsSave } from 'react-icons/bs';
 import html2canvas from 'html2canvas';
 
-function Uplatnica({ setShowPayCheck, showPayCheck }) {
+function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
   const { language, name, surname, street, streetNumber, requestType, brojParcela, location } = useContext(ContextAll);
 
   const [cena, setCena] = useState();
@@ -79,11 +79,11 @@ function Uplatnica({ setShowPayCheck, showPayCheck }) {
               </div>
               <div className='mt-2'>
                 <span className='text-[.75rem]'>{language === "cir" ? "сврха уплате" : "svrha uplate"}</span>
-                <p className="p-2 border border-1 border-black text-[.9rem]">uplata</p>
+                <p className="p-2 border border-1 border-black text-[.9rem]">Transakcija gradjana</p>
               </div>
               <div className='mt-2'>
                 <span className='text-[.75rem]'>{language === "cir" ? "прималац" : "primalac"}</span>
-                <p className="p-2 border border-1 border-black text-[.9rem]">BAUPROJEKT DOO</p>
+                <p className="p-2 border border-1 border-black text-[.9rem]">Power & Build DOO <br /> Garibaldijeva 13, Vozdovac</p>
               </div>
 
             </div>
@@ -105,13 +105,13 @@ function Uplatnica({ setShowPayCheck, showPayCheck }) {
               </div>
               <div className="w-full">
                 <span className='text-[.75rem]'>{language === "cir" ? "израчун примаоца" : "račun primaoca"}</span>
-                <p className="px-1 border border-1 border-black text-[.9rem]">205-9001022545298-66</p>
+                <p className="px-1 border border-1 border-black text-[.9rem]">340-0000011033849-21</p>
               </div>
               <div className="w-full">
                 <span className='text-[.75rem]'>{language === "cir" ? "модел и позив на број (одобрење)" : "model i poziv na broj (odobrenje)"}</span>
                 <div className="flex w-full justify-between">
-                  <p className="px-1 border border-1 border-black text-[.9rem] w-[15%]">205</p>
-                  <p className="px-1 border border-1 border-black text-[.9rem] w-[75%]">205-9001022545298-66</p>
+                  <p className="px-1 border border-1 border-black text-[.9rem] w-[15%]"></p>
+                  <p className="px-1 border border-1 border-black text-[.9rem] w-[75%]">{singleId}</p>
                 </div>
               </div>
               <div className="w-full">

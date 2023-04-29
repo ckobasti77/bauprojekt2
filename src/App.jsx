@@ -664,6 +664,7 @@ function App() {
     number10,
   ]);
   const [submit, setSubmit] = useState("");
+  const [singleId, setSingleId] = useState('')
 
   const handleSubmit = async (e) => {
     setSubmit("loading");
@@ -674,7 +675,10 @@ function App() {
         podaci
       );
       const data = await response.data;
+      const id = await data._id.replace(/\D/g, '');
+      setSingleId(id);
       setSubmit("success");
+      setShowPayCheck(true)
     } catch (err) {
       console.log(err);
       setSubmit("error");
@@ -696,7 +700,7 @@ function App() {
         />
       )}
       {loader && <Loader />}
-      {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} showPayCheck={showPayCheck}/>}
+      {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} showPayCheck={showPayCheck} singleId={singleId} />}
       <div className="App w-full">
         <Navbar setShowAdmin={setShowAdmin} />
         <form
@@ -709,7 +713,7 @@ function App() {
             <Request />
             <Applicant />
             <LocationInfo />
-            <button
+            {/* <button
               className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
               onClick={(e) => {
                 e.preventDefault();
@@ -718,7 +722,7 @@ function App() {
             >
               {language === "cir" ? `Прикажи уплатницу` : `Prikaži uplatnicu`}{" "}
               <img src={check} alt="qr" className="inline ml-3" />
-            </button>
+            </button> */}
             <Rules />
             <Submit submit={submit} />
           </div>
