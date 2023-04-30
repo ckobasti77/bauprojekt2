@@ -129,7 +129,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
           {podaci &&
             podaci?.map((jedan, i) => {
               return (
-                <tr className="bg-white border-b border-gray-300" key={i}>
+                <tr className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-red-200'} ${jedan.vrstaZahteva === 'Standardan' && 'bg-green-200'} bg-white border-b border-gray-300`} key={i}>
                   <th
                     scope="row"
                     className="text-center px-6 py-4 font-bold text-[12px] text-gray-900 whitespace-nowrap dark:text-white"
@@ -302,7 +302,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                        hour12: false,
                     })}
                   </td>
-                  <td className={`${jedan.statusZahteva === 'Uplacen' && 'bg-[#4bb543]/75 rounded-xl'} ${jedan.statusZahteva === 'Zavrsen' && 'bg-[#4bb543] rounded-xl'} px-4`}>
+                  <td className="px-4">
                     <select 
                       defaultValue={jedan.statusZahteva} 
                       onChange={(e) => {
