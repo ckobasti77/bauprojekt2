@@ -66,7 +66,7 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
         {language === 'cir' ? 'Сачувај уплатницу' : 'Sačuvaj uplatnicu'}<BsSave className="inline w-[30px] ml-2 text-2xl"/>
       </button>
       
-      <div id="screenshot" className="uplatnica transform scale-[1.35] bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">
+      <div id="screenshot" className="uplatnica bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">
         <div className="border border-1 border-[#252525]/25 w-full h-full p-4">
           <h1 className="text-right text-[#252525] mb-2">
             {language === "cir" ? "НАЛОГ ЗА УПЛАТУ" : "NALOG ZA UPLATU"}
@@ -115,7 +115,8 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
                 </div>
               </div>
               <div className="w-full">
-                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} />
+                {/* <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} /> */}
+                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, GARIBALDIJEVA 13, BEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|`} />
               </div>
             </div>
           </div>
