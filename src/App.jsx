@@ -726,7 +726,7 @@ function App() {
             <Request />
             <Applicant />
             <LocationInfo />
-            <button
+            {/* <button
               className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
               onClick={(e) => {
                 e.preventDefault();
@@ -735,7 +735,7 @@ function App() {
             >
               {language === "cir" ? `Прикажи уплатницу` : `Prikaži uplatnicu`}{" "}
               <img src={check} alt="qr" className="inline ml-3" />
-            </button>
+            </button> */}
             <Rules />
             <Submit submit={submit} />
           </div>
