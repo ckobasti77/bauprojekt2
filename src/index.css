@@ -39,6 +39,11 @@ body {
   color: #fff;
   overflow-x: hidden;
 }
+/* 
+#screenshot {
+  font-family: Calibri, sans-serif;
+} */
+
 
 .App {
   background: url("./assets/bg4.jpg") fixed no-repeat;

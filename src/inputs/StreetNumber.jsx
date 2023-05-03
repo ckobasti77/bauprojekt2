@@ -10,12 +10,9 @@ const StreetNumber = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидан кућни број.");
-    } else {
-      setError("Unesite validan kućni broj.");
-    }
+    setError("")
     setValue('');
+    setStreetNumber('');
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const StreetNumber = () => {
         onChange={(e) => {
           setStreetNumber(e.target.value);
           setValue(e.target.value);
+        }}
+        onBlur={(e) => {
           /^(\d+[А-ЩЪЬЈЉЊЋЏа-шљњћџA-Za-z]?|\d+[а-шА-ЩЪЬЈЉЊЋЏ]\d{0,3}|bb|BB|бб|ББ)$/.test(e.target.value)
             ? setError("")
             : language === "cir"

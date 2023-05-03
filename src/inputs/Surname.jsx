@@ -10,12 +10,9 @@ const Surname = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидно презиме.");
-    } else {
-      setError("Unesite validno prezime");
-    }
+    setError("");
     setValue('');
+    setSurname('');
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const Surname = () => {
         onChange={(e) => {
           setSurname(e.target.value);
           setValue(e.target.value);
+        }}
+        onBlur={(e) => {
           /^([А-ЩЪЬЈЉЊЋЏ][а-щъьюљњћџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
             ? setError("")
             : language === "cir"

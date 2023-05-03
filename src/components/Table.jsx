@@ -4,7 +4,7 @@ import { BsSave } from "react-icons/bs";
 
 import axios from "axios";
 
-const Table = ({ setShowTable, setShowAdmin }) => {
+const Table = ({ setShowTable, setShowAdmin, setIsAdmin }) => {
   const [podaci, setPodaci] = useState([]);
 
   const [singleRow, setSingleRow] = useState({});
@@ -61,6 +61,11 @@ const Table = ({ setShowTable, setShowAdmin }) => {
   const [showScrollRight, setShowScrollRight] = useState(true);
   const [showScrollLeft, setShowScrollLeft] = useState(false);
 
+  function handleLogout() {
+    setIsAdmin(false);
+    localStorage.removeItem("isAdmin");
+  }
+
 
   return (
     <div id="tabela" className="overflow-scroll shadow-md fixed z-[99999] h-screen w-screen bg-[#e0e0e0]">
@@ -82,6 +87,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
                 e.preventDefault();
                 setShowTable(false);
                 setShowAdmin(false);
+                handleLogout()
               }}
             >
               <AiOutlineCloseCircle />
@@ -129,7 +135,7 @@ const Table = ({ setShowTable, setShowAdmin }) => {
           {podaci &&
             podaci?.map((jedan, i) => {
               return (
-                <tr className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-red-200'} ${jedan.vrstaZahteva === 'Standardan' && 'bg-green-200'} bg-white border-b border-gray-300`} key={i}>
+                <tr className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-red-300/25'} ${jedan.vrstaZahteva === 'Standardan' && 'bg-green-300/25'} bg-white border-b border-gray-300`} key={i}>
                   <th
                     scope="row"
                     className="text-center px-6 py-4 font-bold text-[12px] text-gray-900 whitespace-nowrap dark:text-white"

@@ -10,12 +10,9 @@ const Location = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидну локацију.");
-    } else {
-      setError("Unesite validnu lokaciju.");
-    }
+    setError("")
     setValue('');
+    setLocation('');
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const Location = () => {
         onChange={(e) => {
           setValue(e.target.value);
           setLocation(e.target.value);
+        }}
+        onBlur={(e) => {
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ -_]{0,27}|[A-ZČĆŠĐŽ][a-zčćšđž -_]{0,27})( [А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ -_]{0,27}| [A-ZČĆŠĐŽ][a-zčćšđž -_]{0,27}){0,3}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

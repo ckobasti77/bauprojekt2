@@ -687,16 +687,29 @@ function App() {
 
   const [showAdmin, setShowAdmin] = useState(false);
 
+  const [isAdmin, setIsAdmin] = useState(localStorage.getItem("isAdmin") || false);
+
+  useEffect(() => {
+    if (isAdmin) {
+      // Pozovite funkciju koja prikazuje prozor sa tabelom
+      setShowTable(true);
+    } else {
+      setShowTable(false);
+    }
+  }, [isAdmin]);
+
+
   return (
     <>
       {showAdmin && (
-        <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} />
+        <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} setIsAdmin={setIsAdmin} />
       )}
       {showTable && (
         <Table
           showTable={showTable}
           setShowTable={setShowTable}
           setShowAdmin={setShowAdmin}
+          setIsAdmin={setIsAdmin}
         />
       )}
       {loader && <Loader />}
@@ -713,7 +726,7 @@ function App() {
             <Request />
             <Applicant />
             <LocationInfo />
-            {/* <button
+            <button
               className="py-3 px-6 rounded-xl mx-auto block my-8 bg-[#2EA295] hover:bg-[#2EA295]/75 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 text-white font-medium"
               onClick={(e) => {
                 e.preventDefault();
@@ -722,7 +735,7 @@ function App() {
             >
               {language === "cir" ? `Прикажи уплатницу` : `Prikaži uplatnicu`}{" "}
               <img src={check} alt="qr" className="inline ml-3" />
-            </button> */}
+            </button>
             <Rules />
             <Submit submit={submit} />
           </div>

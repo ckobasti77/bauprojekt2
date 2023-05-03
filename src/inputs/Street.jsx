@@ -10,12 +10,9 @@ const Street = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидан назив улице.");
-    } else {
-      setError("Unesite validan naziv ulice.");
-    }
+    setError("");
     setValue('');
+    setStreet("");
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const Street = () => {
         onChange={(e) => {
           setStreet(e.target.value);
           setValue(e.target.value);
+        }}
+        onBlur={(e) => {
           /^[А-Яа-яA-Za-zČčĆćĐđŠšŽžЋћЂђЏџ0-9\s\.\-\']+$/.test(
             e.target.value
           )

@@ -41,9 +41,9 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
   const takeScreenshot = () => {
     html2canvas(document.querySelector("#screenshot")).then(canvas => {
       const link = document.createElement('a');
-      link.download = 'bauprojekt-uplatnica.png';
       // link.download = 'bauprojekt-uplatnica.pdf';
-      link.href = canvas.toDataURL();
+      link.href = canvas.toDataURL("image/png", 0.92);
+      link.download = 'bauprojekt-uplatnica.png';
       link.click();
     });
   }
@@ -66,7 +66,7 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
         {language === 'cir' ? 'Сачувај уплатницу' : 'Sačuvaj uplatnicu'}<BsSave className="inline w-[30px] ml-2 text-2xl"/>
       </button>
       
-      <div id="screenshot" className="uplatnica bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">
+      <div id="screenshot" className="uplatnica transform scale-[1.35] bg-white sm:min-w-[800px] sm:h-[350px] p-2 text-[#252525]">
         <div className="border border-1 border-[#252525]/25 w-full h-full p-4">
           <h1 className="text-right text-[#252525] mb-2">
             {language === "cir" ? "НАЛОГ ЗА УПЛАТУ" : "NALOG ZA UPLATU"}
@@ -74,15 +74,15 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
           <div className="flex h-[75%] uplatnica-inputs">
             <div className="w-[40%] prvi">
               <div>
-                <span className='text-[.75rem]'>{language === "cir" ? "уплатилац" : "uplatilac"}</span>
-                <p className="p-2 border border-1 border-black text-[.9rem]">{`${name} ${surname}, ${street + ' ' + streetNumber}, ${location}`}</p>
+                <span className='text-[.75rem] block mb-2'>{language === "cir" ? "уплатилац" : "uplatilac"}</span>
+                <p className="p-2 border border-1 border-black text-[.9rem] leading-[.9rem]">{`${name} ${surname}, ${street + ' ' + streetNumber}, ${location}`}</p>
               </div>
               <div className='mt-2'>
-                <span className='text-[.75rem]'>{language === "cir" ? "сврха уплате" : "svrha uplate"}</span>
-                <p className="p-2 border border-1 border-black text-[.9rem]">Transakcija gradjana</p>
+                <span className='text-[.75rem] block mb-2'>{language === "cir" ? "сврха уплате" : "svrha uplate"}</span>
+                <p className="p-2 border border-1 border-black text-[.9rem]">Uplata za taksu</p>
               </div>
               <div className='mt-2'>
-                <span className='text-[.75rem]'>{language === "cir" ? "прималац" : "primalac"}</span>
+                <span className='text-[.75rem] block mb-2'>{language === "cir" ? "прималац" : "primalac"}</span>
                 <p className="p-2 border border-1 border-black text-[.9rem]">Power & Build DOO <br /> Garibaldijeva 13, Vozdovac</p>
               </div>
 
@@ -91,31 +91,31 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
             <div className="w-[55%] treci">
               <div className="w-full flex justify-between items-end">
                 <div className="w-[20%]">
-                  <span className='text-[.75rem] leading-4 block'>{language === "cir" ? "шифра плаћања" : "šifra plaćanja"}</span>
-                  <p className="px-1 border border-1 border-black text-[.9rem]">189</p>
+                  <span className='text-[.75rem] leading-4 block mb-2'>{language === "cir" ? "шифра плаћања" : "šifra plaćanja"}</span>
+                  <p className="px-1 border border-1 border-black text-[.9rem] klasa">189</p>
                 </div>
                 <div className="w-[20%]">
-                  <span className='text-[.75rem]'>{language === "cir" ? "валута" : "valuta"}</span>
-                  <p className="px-1 border border-1 border-black text-[.9rem]">rsd</p>
+                  <span className='text-[.75rem] block mb-2'>{language === "cir" ? "валута" : "valuta"}</span>
+                  <p className="px-1 border border-1 border-black text-[.9rem] klasa">rsd</p>
                 </div>
                 <div className="w-[50%]">
-                  <span className='text-[.75rem]'>{language === "cir" ? "износ" : "iznos"}</span>
-                  <p className="px-1 border border-1 border-black text-[.9rem]">{cena},00</p>
+                  <span className='text-[.75rem] block mb-2'>{language === "cir" ? "износ" : "iznos"}</span>
+                  <p className="px-1 border border-1 border-black text-[.9rem] klasa">{cena},00</p>
                 </div>
               </div>
               <div className="w-full">
-                <span className='text-[.75rem]'>{language === "cir" ? "израчун примаоца" : "račun primaoca"}</span>
-                <p className="px-1 border border-1 border-black text-[.9rem]">340-0000011033849-21</p>
+                <span className='text-[.75rem] block mb-2'>{language === "cir" ? "рачун примаоца" : "račun primaoca"}</span>
+                <p className="px-1 border border-1 border-black text-[.9rem] klasa">340-0000011033849-21</p>
               </div>
               <div className="w-full">
-                <span className='text-[.75rem]'>{language === "cir" ? "модел и позив на број (одобрење)" : "model i poziv na broj (odobrenje)"}</span>
+                <span className='text-[.75rem] block my-2'>{language === "cir" ? "модел и позив на број (одобрење)" : "model i poziv na broj (odobrenje)"}</span>
                 <div className="flex w-full justify-between">
-                  <p className="px-1 border border-1 border-black text-[.9rem] w-[15%]"></p>
-                  <p className="px-1 border border-1 border-black text-[.9rem] w-[75%]">{singleId}</p>
+                  <p className="px-1 border border-1 border-black text-[.9rem] w-[15%]">{singleId.substring(0,2)}</p>
+                  <p className="px-1 border border-1 border-black text-[.9rem] w-[75%]">{singleId.substring(2)}</p>
                 </div>
               </div>
               <div className="w-full">
-                <QRCode className="qr mx-auto w-[100px] my-4" size={100} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, Beograd|I:RSD${cena || 0},00|P:Kupac|SF:289|S:Transakcija gradjana`} />
+                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} />
               </div>
             </div>
           </div>

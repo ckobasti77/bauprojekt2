@@ -10,12 +10,9 @@ const PhoneNumber = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидан број телефона.");
-    } else {
-      setError("Unesite validan broj telefona.");
-    }
+    setError("")
     setValue('');
+    setPhoneNumber('');
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const PhoneNumber = () => {
         onChange={(e) => {
           setValue(e.target.value);
           setPhoneNumber(e.target.value);
+        }}
+        onBlur={(e) => {
           /^(?:\+381|0)[\d\/\- ]{8,}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

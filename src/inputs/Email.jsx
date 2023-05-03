@@ -10,12 +10,9 @@ const Email = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидан е-маил.");
-    } else {
-      setError("Unesite validan e-mail.");
-    }
+    setError("")
     setValue('');
+    setEmail('');
   }, [language]);
 
 
@@ -29,6 +26,8 @@ const Email = () => {
         onChange={(e) => {
           setValue(e.target.value);
           setEmail(e.target.value);
+        }}
+        onBlur={(e) => {
           /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(e.target.value)
             ? setError("")
             : language === "cir"

@@ -10,12 +10,9 @@ const CadastralMunicipality = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидну општину.");
-    } else {
-      setError("Unesite validnu opštinu.");
-    }
+    setError("");
     setValue('');
+    setCadastralMunicipality('');
   }, [language]);
 
   return (
@@ -28,6 +25,8 @@ const CadastralMunicipality = () => {
         onChange={(e) => {
           setValue(e.target.value);
           setCadastralMunicipality(e.target.value);
+        }}
+        onBlur={(e) => {
           /^([А-ЩЪЬЈЉЊЋЂЏШ][а-щъьюљњћђџш -_]{0,28}[а-щъьюљњћђџш]|[A-ZČĆŠĐŽ][a-zčćšđž -_]{0,28}[a-zčćšđž])$/.test(e.target.value)
             ? setError("")
             : language === "cir"

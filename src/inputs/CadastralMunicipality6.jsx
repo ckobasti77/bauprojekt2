@@ -10,12 +10,9 @@ const CadastralMunicipality3 = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидну општину.");
-    } else {
-      setError("Unesite validnu opštinu.");
-    }
+    setError("");
     setValue('');
+    setCadastralMunicipality6('');
   }, [language]);
 
   return (
@@ -28,10 +25,12 @@ const CadastralMunicipality3 = () => {
         onChange={(e) => {
           setValue(e.target.value);
           setCadastralMunicipality6(e.target.value);
+        }}
+        onBlur={(e) => {
           /^([А-ЩЪЬЈЉЊЋЂЏШ][а-щъьюљњћђџш -_]{0,28}[а-щъьюљњћђџш]|[A-ZČĆŠĐŽ][a-zčćšđž -_]{0,28}[a-zčćšđž])$/.test(e.target.value)
             ? setError("")
             : language === "cir"
-            ? setError("Унесите валиднз општину.")
+            ? setError("Унесите валидну општину.")
             : setError("Unesite validnu opštinu.");
         }}
         className={`${

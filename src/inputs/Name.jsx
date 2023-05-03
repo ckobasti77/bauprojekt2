@@ -10,12 +10,9 @@ const Name = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
-    if (language === "cir") {
-      setError("Унесите валидно име.");
-    } else {
-      setError("Unesite validno ime.");
-    }
+    setError("");
     setValue('');
+    setName('');
   }, [language]);
 
   return (
@@ -29,11 +26,13 @@ const Name = () => {
         onChange={(e) => {
           setName(e.target.value);
           setValue(e.target.value);
+        }}
+        onBlur={(e) => {
           /^([А-ЩЪЬЈЉЊЋЂЏ][а-щъьюљњћђџ]{1,29}|[A-ZČĆŠĐŽ][a-zčćšđž]{1,29})$/.test(e.target.value)
-            ? setError("")
-            : language === "cir"
-            ? setError("Унесите валидно име.")
-            : setError("Unesite validno ime.");
+          ? setError("")
+          : (language === "cir"
+          ? setError("Унесите валидно име.")
+          : setError("Unesite validno ime."));
         }}
         className={`${
           error.length > 0 && value.length > 0
