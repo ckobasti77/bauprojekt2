@@ -115,8 +115,8 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
                 </div>
               </div>
               <div className="w-full">
-                {/* <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} /> */}
-                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, GARIBALDIJEVA 13, BEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|`} />
+                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} />
+                {/* <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, GARIBALDIJEVA 13, BEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|`} /> */}
               </div>
             </div>
           </div>
