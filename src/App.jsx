@@ -698,6 +698,14 @@ function App() {
     }
   }, [isAdmin]);
 
+  useEffect(() => {
+    if(showTable) {
+      document.body.classList.add('overflow-y-hidden')
+    } else {
+      document.body.classList.remove('overflow-y-hidden')
+    }
+
+  }, [showTable])
 
   return (
     <>
@@ -714,7 +722,7 @@ function App() {
       )}
       {loader && <Loader />}
       {showPayCheck && <Uplatnica setShowPayCheck={setShowPayCheck} showPayCheck={showPayCheck} singleId={singleId} />}
-      <div className="App w-full">
+      <div className={`App w-full overflow`}>
         <Navbar setShowAdmin={setShowAdmin} />
         <form
           // action="https://formsubmit.co/jocikam738@gmail.com"
