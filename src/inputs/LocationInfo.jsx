@@ -17,7 +17,7 @@ const LocationInfo = () => {
             <label htmlFor="posta" className='vrsta-zahteva-labels cursor-pointer px-3 py-1 rounded-lg w-full inline-flex items-center justify-center' onClick={() => setLocationInfo('Pošta')}>{language === 'cir' ? 'Поште' : 'Pošte'}</label>
           </div>
       </div>
-      {locationInfo === '' && <span className="mx-auto my-1 font-bold text-[#ee3b47] text-center block text-sm">{language === 'cir' ? '* Обавезно' : '* Obavezno'}</span>}
+      {/* {locationInfo === '' && <span className="mx-auto my-1 font-bold text-[#ee3b47] text-center block text-sm">{language === 'cir' ? '* Обавезно' : '* Obavezno'}</span>} */}
     </>
   )
 }
