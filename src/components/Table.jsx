@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { AiOutlineCloseCircle, AiOutlineDelete } from "react-icons/ai";
-import { BsSave } from "react-icons/bs";
 
 import axios from "axios";
 
@@ -78,8 +77,8 @@ const Table = ({ setShowTable, setShowAdmin, setIsAdmin }) => {
         {"<"}
       </button>
       <table className="w-full text-sm text-left text-gray-600">
-        <thead className="text-xs text-gray-700 uppercase bg-gray-50">
-          <tr>
+        <thead className="text-xs text-gray-700 uppercase bg-gray-50 sticky top-0">
+          <tr className="">
             <th scope="col" className="text-center">
             <button
               className="close-uplatnica text-[#252525] font-bold text-2xl transform translate-y-[3px] hover:text-[#2ea295] hover:translate-y-[0px] transition-all duration-150"
@@ -109,7 +108,7 @@ const Table = ({ setShowTable, setShowAdmin, setIsAdmin }) => {
               E-mail
             </th>
             <th scope="col" className="text-center px-6 py-3">
-              Zahtevi
+              Parcele
             </th>
             <th scope="col" className="text-center px-6 py-3">
               Poziv <br /> na broj
@@ -293,7 +292,7 @@ const Table = ({ setShowTable, setShowAdmin, setIsAdmin }) => {
                   <td className="text-center px-6 py-4 whitespace-nowrap">
                     {jedan._id.replace(/\D/g, '')}
                   </td>
-                  <td className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-[#e36841] text-[#e0e0e0] rounded-xl'} text-center px-6 py-4 whitespace-nowrap`}>
+                  <td className={`text-center px-6 py-4 whitespace-nowrap`}>
                     {jedan.vrstaZahteva}
                   </td>
                   <td className="text-center px-6 py-4 whitespace-nowrap">

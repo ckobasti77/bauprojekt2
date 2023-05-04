@@ -79,7 +79,7 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
               </div>
               <div className='mt-2'>
                 <span className='text-[.75rem] block mb-2'>{language === "cir" ? "сврха уплате" : "svrha uplate"}</span>
-                <p className="p-2 border border-1 border-black text-[.9rem]">Uplata za taksu</p>
+                <p className="p-2 border border-1 border-black text-[.9rem]">Uplata takse</p>
               </div>
               <div className='mt-2'>
                 <span className='text-[.75rem] block mb-2'>{language === "cir" ? "прималац" : "primalac"}</span>
@@ -115,7 +115,7 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
                 </div>
               </div>
               <div className="w-full">
-                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|RO:${singleId}`} />
+                <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo\r\nGARIBALDIJEVA 13\r\nBEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata takse|RO:${singleId}`} />
                 {/* <QRCode className="qr mx-auto w-[100px] my-4" size={80} value={`K:PR|V:01|C:1|R:340000001103384921|N:Power & Build doo, GARIBALDIJEVA 13, BEOGRAD |I:RSD${cena || 0},00|P:Kupac|SF:289|S:Uplata za taksu|`} /> */}
               </div>
             </div>

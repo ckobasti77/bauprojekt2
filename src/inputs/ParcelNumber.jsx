@@ -1,4 +1,4 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect, useRef } from "react";
 import { ContextAll } from "../context/context";
 
 import { warning } from "../assets/assets";
@@ -19,11 +19,36 @@ const ParcelNumber = () => {
     } else {
       setError("");
     }
-  }, [language, value]);
+  }, [value]);
 
   useEffect(() => {
     setValue('');
+    setError("");
+    setParcelNumber("");
   }, [language]);
+
+  const inputRef = useRef(null);
+  
+  function handleKeyDown(event) {
+    // dozvoli unos negativnog predznaka samo ako je prva cifra
+    if (event.key === '-' && inputRef.current.selectionStart !== 0) {
+      event.preventDefault();
+    }
+
+    // dozvoli unos cifara i dozvoljene tipke
+    if (!/[0-9]/.test(event.key) && !['ArrowLeft', 'ArrowRight', 'Backspace', 'Delete', 'Tab'].includes(event.key)) {
+      event.preventDefault();
+    }
+  }
+
+  function handlePaste(event) {
+    const pastedData = event.clipboardData.getData('text/plain');
+
+    // dozvoli samo cifre u zalijepi sadržaj
+    if (!/^\d*$/.test(pastedData)) {
+      event.preventDefault();
+    }
+  }
 
   return (
     <div className="relative w-3/6 z-0 group">
@@ -36,6 +61,10 @@ const ParcelNumber = () => {
           setValue(e.target.value);
           setParcelNumber(e.target.value);
         }}
+        onKeyDown={handleKeyDown}
+        onPaste={handlePaste}
+        ref={inputRef}
+        inputMode="numeric"
         className={`${
           error.length > 0 && value.length > 0
             ? "border-red-600 focus:border-red-600"
