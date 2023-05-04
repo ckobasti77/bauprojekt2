@@ -135,7 +135,7 @@ const Table = ({ setShowTable, setShowAdmin, setIsAdmin }) => {
           {podaci &&
             podaci?.map((jedan, i) => {
               return (
-                <tr className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-red-300/25'} ${jedan.vrstaZahteva === 'Standardan' && 'bg-green-300/25'} bg-white border-b border-gray-300`} key={i}>
+                <tr className={`${jedan.vrstaZahteva === 'Hitan' && 'bg-red-300/25'} ${jedan.vrstaZahteva === 'Standardan' && 'bg-green-300/25'} border-b border-gray-300`} key={i}>
                   <th
                     scope="row"
                     className="text-center px-6 py-4 font-bold text-[12px] text-gray-900 whitespace-nowrap dark:text-white"
