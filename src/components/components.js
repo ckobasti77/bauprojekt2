@@ -19,6 +19,7 @@ import Uplatnica from "./Uplatnica";
 import Table from "./Table";
 import Admin from "./Admin";
 import Submit from "./Submit";
+import Start from "./Start";
 
 
 export {
@@ -43,5 +44,5 @@ export {
     Table,
     Admin,
     Submit,
-
+    Start
 }

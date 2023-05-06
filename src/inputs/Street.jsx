@@ -39,7 +39,7 @@ const Street = () => {
           error.length > 0 && value.length > 0
             ? "border-red-600 focus:border-red-600"
             : " border-gray-300 focus:border-[#2EA295]"
-        } block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-50 border-0 border-b-2  appearance-none focus:outline-none focus:ring-0 focus:border-[#2EA295] peer`}
+        } block rounded-t-lg px-2.5 pb-2.5 pt-5 w-full text-sm text-gray-900 bg-gray-300 border-0 border-b-2  appearance-none focus:outline-none focus:ring-0 focus:border-[#2EA295] peer`}
         placeholder=" "
         required
       />

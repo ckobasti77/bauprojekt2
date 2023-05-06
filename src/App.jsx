@@ -14,6 +14,7 @@ import {
   Table,
   Admin,
   Submit,
+  Start,
 } from "./components/components";
 
 import { LocationInfo } from "./inputs/inputs";
@@ -707,8 +708,11 @@ function App() {
 
   }, [showTable])
 
+  const [showStart, setShowStart] = useState(true)
+
   return (
     <>
+      {showStart && <Start setShowStart={setShowStart} />}
       {showAdmin && (
         <Admin setShowAdmin={setShowAdmin} setShowTable={setShowTable} setIsAdmin={setIsAdmin} />
       )}
