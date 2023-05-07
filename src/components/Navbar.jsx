@@ -1,11 +1,19 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { ContextAll } from "../context/context";
+import { useEffect } from "react";
 
 const Navbar = ({ setShowTable, setShowAdmin }) => {
   const { language, setLanguage } = useContext(ContextAll);
 
+  const [bgTransparent, setBgTransparent] = useState(true);
+
+  useEffect(() => {
+    setBgTransparent(true)
+  }, [])
+  
+
   return (
-    <div className="navbar w-full flex justify-between px-0 py-3 lg:px-10">
+    <div className={`${bgTransparent === true && 'bg-transparent fixed'} navbar w-full flex justify-between px-0 py-3 lg:px-10 z-[99999999]`}>
       <div>
         <input
           type="radio"
