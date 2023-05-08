@@ -9,9 +9,9 @@ const Start = ({ setShowStart }) => {
 
   return (
     <>
-      <div className="uplatnica-bg w-screen h-screen fixed z-[999999] grid place-items-center">
+      <div className="uplatnica-bg w-screen h-screen fixed z-[999999]">
       <Navbar />
-        <div className="bg-bg w-screen lg:w-2/6 rounded-2xl border-2 p-6 flex flex-col justify-between">
+        <div className="bg-bg w-screen lg:w-2/6 rounded-2xl border-2 p-6 flex flex-col justify-between m-auto">
           <h1 className="text-4xl text-center mb-4">
             {language === "cir"
               ? "Дошли сте на сајт за издавање ИНФОРМАЦИЈЕ О ЛОКАЦИЈИ"
