@@ -28,12 +28,10 @@ const ParcelSubnumber = () => {
   const inputRef = useRef(null);
   
   function handleKeyDown(event) {
-    // dozvoli unos negativnog predznaka samo ako je prva cifra
     if (event.key === '-' && inputRef.current.selectionStart !== 0) {
       event.preventDefault();
     }
 
-    // dozvoli unos cifara i dozvoljene tipke
     if (!/[0-9]/.test(event.key) && !['ArrowLeft', 'ArrowRight', 'Backspace', 'Delete', 'Tab'].includes(event.key)) {
       event.preventDefault();
     }
@@ -42,7 +40,6 @@ const ParcelSubnumber = () => {
   function handlePaste(event) {
     const pastedData = event.clipboardData.getData('text/plain');
 
-    // dozvoli samo cifre u zalijepi sadržaj
     if (!/^\d*$/.test(pastedData)) {
       event.preventDefault();
     }

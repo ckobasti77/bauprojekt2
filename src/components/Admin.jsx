@@ -8,18 +8,8 @@ const Admin = ({ setShowAdmin, setShowTable, setIsAdmin }) => {
   const [ime, setIme] = useState("");
   const [sifra, setSifra] = useState("");
 
-  // useEffect(() => {
-  //   if(ime === "bau2023" && sifra === "projekt") {
-  //     if(navigator.vibrate) {
-  //       navigator.vibrate(500)
-  //     }
-  //     setShowTable(true);
-  //   }
-  // }, [ime, sifra]);
-
   function handleLogin() {
     if (ime === "bau2023" && sifra === "projekt") {
-      // Postavite isAdmin u true
       setIsAdmin(true);
       localStorage.setItem("isAdmin", true);
     } else {

@@ -36,17 +36,7 @@ const Parcels = () => {
     number10,
     setNumber10,
   } = useContext(ContextAll);
-
-  // const [number2, setNumber2] = useState(false);
-  // const [number3, setNumber3] = useState(false);
-  // const [number4, setNumber4] = useState(false);
-  // const [number5, setNumber5] = useState(false);
-  // const [number6, setNumber6] = useState(false);
-  // const [number7, setNumber7] = useState(false);
-  // const [number8, setNumber8] = useState(false);
-  // const [number9, setNumber9] = useState(false);
-  // const [number10, setNumber10] = useState(false);
-
+  
   return (
     <>
       <Parcel />

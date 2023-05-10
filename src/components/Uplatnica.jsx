@@ -41,7 +41,6 @@ function Uplatnica({ setShowPayCheck, showPayCheck, singleId }) {
   const takeScreenshot = () => {
     html2canvas(document.querySelector("#screenshot")).then(canvas => {
       const link = document.createElement('a');
-      // link.download = 'bauprojekt-uplatnica.pdf';
       link.href = canvas.toDataURL("image/png", 0.92);
       link.download = 'bauprojekt-uplatnica.png';
       link.click();
