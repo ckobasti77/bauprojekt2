@@ -1,5 +1,5 @@
 on: push
-name: Publish Website
+name: Publish Website Dry Run
 jobs:
   web-deploy:
     name: 🚀 Deploy Website Every Commit
@@ -8,23 +8,15 @@ jobs:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
 
-    - name: 📦 Install Packages
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-        cache: "npm"
-    - run: npm ci
-      
-    - name: 🔨 Build
-      run: npm run build
-    
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
         target-server: ftp.informacijaolokaciji.com
         remote-user: infohom3
         private-ssh-key: ${{ secrets.SSH_KEY }}
+        ssh-port: 21
         destination-path: ~/public_html/
+        rsync-options: --dry-run --archive --verbose --compress --delete-after --human-readable --exclude=.git* --exclude=.git/ --exclude=README.md --exclude=readme.md --exclude=.gitignore
 # on: 
 #   push:
 #     branches:
