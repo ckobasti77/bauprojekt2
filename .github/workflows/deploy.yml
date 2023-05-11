@@ -11,7 +11,7 @@ jobs:
     - name: 📦 Install Packages
     - uses: actions/setup-node@v3
       with:
-        node-version: 18
+        node-version: '18'
         cache: "npm"
       
     - name: 🔨 Build
@@ -24,3 +24,35 @@ jobs:
         remote-user: github-actions@informacijaolokaciji.com
         private-ssh-key: ${{ secrets.SSH_KEY }}
         destination-path: ~/public_html/
+# on: 
+#   push:
+#     branches:
+#       - main
+# name: 🚀 Deploy website on push
+
+# jobs:
+#   web-deploy:
+#     name: 🎉 Deploy
+#     runs-on: ubuntu-latest
+#     steps:
+#     - name: 🚚 Get latest code
+#       uses: actions/checkout@v3
+
+#     - name: Use Node.js 16
+#       uses: actions/setup-node@v2
+#       with:
+#         node-version: '16'
+      
+#     - name: 🔨 Build Project
+#       run: |
+#         npm install
+#         npm run build
+    
+#     - name: 📂 Sync files
+#       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+#       with:
+#         server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+#         username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+#         password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+#         protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+#         local-dir: ./dist/
