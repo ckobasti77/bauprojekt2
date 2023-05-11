@@ -7,23 +7,14 @@ jobs:
     steps:
     - name: 🚚 Get Latest Code
       uses: actions/checkout@v3
-
-    - name: 📦 Install Packages
-      uses: actions/setup-node@v3
-      with:
-        node-version: '18'
-        cache: "npm"
-      
-    - name: 🔨 Build
-      run: npm run build
     
     - name: 📂 Sync Files
       uses: SamKirkland/web-deploy@v1
       with:
-        target-server: informacijaolokaciji.com
-        remote-user: github-actions@informacijaolokaciji.com
+        target-server: example.com
+        remote-user: username
         private-ssh-key: ${{ secrets.SSH_KEY }}
-        destination-path: ~/public_html/
+        destination-path: ~/destinationFolder/
 # on: 
 #   push:
 #     branches:
