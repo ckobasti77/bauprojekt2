@@ -1,5 +1,9 @@
-on: push
+on: 
+  push:
+    branches:
+      - main
 name: 🚀 Deploy website on push
+
 jobs:
   web-deploy:
     name: 🎉 Deploy
@@ -18,9 +22,11 @@ jobs:
         npm install
         npm run build
     
-- name: FTP Deploy
-  uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: ftp.samkirkland.com
-        username: username@samkirkland.com	
-        password: CrazyUniquePassword&%123
+        server: ${{ secrets.GIT_CPANEL_REACT_SERVER }}
+        username: ${{ secrets.GIT_CPANEL_REACT_USER }}
+        password: ${{ secrets.GIT_CPANEL_REACT_PWD }}
+        protocol: ${{ secrets.GIT_CPANEL_REACT_PROTOCOL }}
+        local-dir: ./build/
