@@ -13,4 +13,4 @@ jobs:
       with:
         server: ftp.samkirkland.com
         username: username@samkirkland.com
-        password: CrazyUniquePassword&%12
+        password: CrazyUniquePassword&%123
