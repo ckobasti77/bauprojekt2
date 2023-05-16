@@ -6,7 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && cp vite.config.js dist/vite.config.js",
     "preview": "vite preview"
   },
   "dependencies": {
